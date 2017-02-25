@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+    <TemplateData>
+        <Name>HSPIPluginA</Name>
+        <Description>HSPIPluginA</Description>
+        <Icon>HSPIPluginA.ico</Icon>
+        <ProjectType>CSharp</ProjectType>
+        <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+        <SortOrder>1000</SortOrder>
+        <TemplateID>b50d2353-1fe9-4819-98ef-f834316940ef</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>HSPIPluginA</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+    </TemplateData>
+    <TemplateContent>
+        <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
+            <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" OpenInEditor="true">HSPI.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" OpenInEditor="true">Program.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="false" OpenInEditor="false">App.config</ProjectItem>
+        </Project>
+    </TemplateContent>
+    <WizardExtension>
+        <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+        <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+    </WizardExtension>
+    <WizardData>
+        <packages repository="extension" repositoryId="HomeSeerTemplates.Alex Dresko.82028f47-9623-4359-a6bf-244390c19608">
+            <package id="Homeseer" version="1.0.0"/>
+            <package id="HSPI" version="1.0.0"/>
+        </packages>
+    </WizardData>
+</VSTemplate>

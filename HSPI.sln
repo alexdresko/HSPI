@@ -10,6 +10,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		HSPI.nuspec = HSPI.nuspec
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{85A80E33-7B0C-4913-A709-F98A7F32829A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeSeerTemplates", "Templates\HomeSeerTemplates\HomeSeerTemplates.csproj", "{B2550542-2064-4520-B79F-9A3685D6A0CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSPIPluginA", "Templates\HSPIPluginA\HSPIPluginA.csproj", "{56725C85-3A26-4FA9-9CE4-CACDDEFF9603}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +26,20 @@ Global
 		{5A16BE5F-4498-4AF1-9C59-3DB79662EBD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A16BE5F-4498-4AF1-9C59-3DB79662EBD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A16BE5F-4498-4AF1-9C59-3DB79662EBD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2550542-2064-4520-B79F-9A3685D6A0CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2550542-2064-4520-B79F-9A3685D6A0CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2550542-2064-4520-B79F-9A3685D6A0CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2550542-2064-4520-B79F-9A3685D6A0CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56725C85-3A26-4FA9-9CE4-CACDDEFF9603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56725C85-3A26-4FA9-9CE4-CACDDEFF9603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56725C85-3A26-4FA9-9CE4-CACDDEFF9603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56725C85-3A26-4FA9-9CE4-CACDDEFF9603}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B2550542-2064-4520-B79F-9A3685D6A0CE} = {85A80E33-7B0C-4913-A709-F98A7F32829A}
+		{56725C85-3A26-4FA9-9CE4-CACDDEFF9603} = {85A80E33-7B0C-4913-A709-F98A7F32829A}
 	EndGlobalSection
 EndGlobal
