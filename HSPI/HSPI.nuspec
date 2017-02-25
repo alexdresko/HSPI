@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+    <metadata>
+        <id>HSPI</id>
+        <version>1.0.0</version>
+        <authors>Alex Dresko</authors>
+        <owners>alexdresko</owners>
+        <licenseUrl>https://github.com/alexdresko/hspi</licenseUrl>
+        <projectUrl>https://github.com/alexdresko/hspi</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/alexdresko/HSPI/master/HS-Button_400x400.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>HomeSeer plugin helper framework</description>
+        <releaseNotes>Initial release</releaseNotes>
+        <tags>homeseer home automation</tags>
+        <dependencies>
+            <dependency id="homeseer" version="1.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="bin\$configuration$\$id$.dll" target="lib\net45\" />
+    </files>
+</package>

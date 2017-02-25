@@ -3,19 +3,19 @@ using System.Threading;
 
 namespace HSPI
 {
-    internal class Program
+    public class Connector
     {
         // our homeseer connection details - we can get these from the console arguments too
         private const string ServerAddress = "127.0.0.1";
         private const int ServerPort = 10400;
 
         // ReSharper disable once UnusedParameter.Local
-        private static void Main(string[] args)
+        public static void Connect<TPlugin>() where TPlugin : HSPIBase, new()
         {
             Console.WriteLine("Test Plugin");
 
             // create an instance of our plugin.
-            var myPlugin = new HSPI();
+            var myPlugin = new TPlugin();
 
             // Get our plugin to connect to Homeseer
             Console.WriteLine("\nConnecting to Homeseer at " + ServerAddress + ":" + ServerPort + " ...");
