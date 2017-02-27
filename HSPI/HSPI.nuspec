@@ -2,7 +2,7 @@
 <package >
     <metadata>
         <id>HSPI</id>
-        <version>1.0.0</version>
+        <version>$version$</version>
         <authors>Alex Dresko</authors>
         <owners>alexdresko</owners>
         <licenseUrl>https://github.com/alexdresko/hspi</licenseUrl>
