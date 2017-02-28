@@ -52,6 +52,10 @@ namespace HSPI
             return s;
         }
 
+        public override string InstanceFriendlyName()
+        {
+            return string.Empty;
+        }
 
         public override int Capabilities()
         {

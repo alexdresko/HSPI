@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+        <Name>HSPIPluginB</Name>
+        <Description>HomeSeer HSPIPluginB project template</Description>
+        <Icon>HS-Button_400x400.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>HomeSeer</ProjectSubType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <SortOrder>1000</SortOrder>
+    <TemplateID>b29d6906-f776-41fb-8f3a-af155e56c912</TemplateID>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>HSPIPluginB</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" OpenInEditor="true">HSPI.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" OpenInEditor="true">Program.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="false" OpenInEditor="false">App.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+    <WizardExtension>
+        <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+        <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+    </WizardExtension>
+    <WizardData>
+        <packages repository="extension" repositoryId="HomeSeerTemplates.Alex Dresko.82028f47-9623-4359-a6bf-244390c19608">
+            <package id="Homeseer" version="1.0.0"/>
+            <package id="HSPI" version="1.0.0"/>
+            <package id="CommandLineParser" version="1.9.71"/>
+        </packages>
+    </WizardData>
+</VSTemplate>
