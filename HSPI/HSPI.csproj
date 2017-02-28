@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="HSPIBase2.cs" />
     <Compile Include="HSPIBase.cs" />
     <Compile Include="Options.cs" />
