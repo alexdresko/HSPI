@@ -5,6 +5,7 @@
         <Description>HSPIPluginA</Description>
         <Icon>HS-Button_400x400.ico</Icon>
         <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>HomeSeer</ProjectSubType>
         <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
         <SortOrder>1000</SortOrder>
         <TemplateID>b50d2353-1fe9-4819-98ef-f834316940ef</TemplateID>
