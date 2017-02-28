@@ -11,7 +11,7 @@ namespace $safeprojectname$
     {
         static void Main(string[] args)
         {
-            Connector.Connect<$safeprojectname$.HSPI >();
+            Connector.Connect<HSPI>(args);
         }
     }
 }
