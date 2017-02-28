@@ -6,7 +6,7 @@ namespace HSPI
 {
     public class Connector
     {
-        public static void Connect<TPlugin>(string[] args) where TPlugin : HSPIBase, new()
+        public static void Connect<TPlugin>(string[] args) where TPlugin : HspiBase, new()
         {
             var options = new Options();
             if (Parser.Default.ParseArguments(args, options))

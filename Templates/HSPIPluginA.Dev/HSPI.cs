@@ -7,7 +7,7 @@ using HSPI;
 namespace HSPIPluginA.Dev
 {
     // ReSharper disable once InconsistentNaming
-    public class HSPI : HSPIBase
+    public class HSPI : HspiBase
     {
         public override string InstanceFriendlyName()
         {
@@ -280,6 +280,11 @@ namespace HSPIPluginA.Dev
         protected override bool GetHscomPort()
         {
             return true;
+        }
+
+        public override void SetDeviceValue(int refId, double value, bool trigger = true)
+        {
+            
         }
     }
 }
