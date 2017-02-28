@@ -4,7 +4,7 @@
         <Identity Id="HomeSeerTemplates.Alex Dresko.82028f47-9623-4359-a6bf-244390c19608" Version="1.1" Language="en-US" Publisher="Alex Dresko" />
         <DisplayName>HomeSeer Templates</DisplayName>
         <Description xml:space="preserve">Visual Studio templates for HomeSeer development</Description>
-        <MoreInfo>https://github.com/alexdresko/HomeSeerTemplates</MoreInfo>
+        <MoreInfo>https://github.com/alexdresko/HSPI</MoreInfo>
         <Icon>HS-Button_400x400.png</Icon>
         <PreviewImage>HS-Button_400x400.png</PreviewImage>
         <Tags>homeseer home automation hspi</Tags>
