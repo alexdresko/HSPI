@@ -3,7 +3,7 @@
     <TemplateData>
         <Name>HSPIPluginA</Name>
         <Description>HSPIPluginA</Description>
-        <Icon>HSPIPluginA.ico</Icon>
+        <Icon>HS-Button_400x400.ico</Icon>
         <ProjectType>CSharp</ProjectType>
         <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
         <SortOrder>1000</SortOrder>
