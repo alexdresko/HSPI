@@ -2,7 +2,7 @@
 <VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
     <TemplateData>
         <Name>HSPIPluginA</Name>
-        <Description>HSPIPluginA</Description>
+        <Description>HomeSeer HSPIPluginA project template</Description>
         <Icon>HS-Button_400x400.ico</Icon>
         <ProjectType>CSharp</ProjectType>
         <ProjectSubType>HomeSeer</ProjectSubType>
@@ -12,6 +12,7 @@
         <CreateNewFolder>true</CreateNewFolder>
         <DefaultName>HSPIPluginA</DefaultName>
         <ProvideDefaultName>true</ProvideDefaultName>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
     </TemplateData>
     <TemplateContent>
         <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
