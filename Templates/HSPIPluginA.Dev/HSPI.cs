@@ -3,7 +3,8 @@ using System.Collections.Specialized;
 using HomeSeerAPI;
 using HSPI;
 
-namespace $safeprojectname$
+//TODO: namespace $safeprojectname$
+namespace HSPIPluginA.Dev
 {
     // ReSharper disable once InconsistentNaming
     public class HSPI : HSPIBase
@@ -15,12 +16,12 @@ namespace $safeprojectname$
 
         public override IPlugInAPI.strInterfaceStatus InterfaceStatus()
         {
-            return new IPlugInAPI.strInterfaceStatus { intStatus = IPlugInAPI.enumInterfaceStatus.OK };
+            return new IPlugInAPI.strInterfaceStatus {intStatus = IPlugInAPI.enumInterfaceStatus.OK};
         }
 
         public override int Capabilities()
         {
-            return (int)Enums.eCapabilities.CA_IO;
+            return (int) Enums.eCapabilities.CA_IO;
         }
 
         public override int AccessLevel()
@@ -272,7 +273,8 @@ namespace $safeprojectname$
 
         protected override string GetName()
         {
-            return "$projectname$";
+            //TODO: return "$projectname$";
+            return "HSPIPluginA.Dev";
         }
 
         protected override bool GetHscomPort()
