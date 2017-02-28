@@ -26,5 +26,6 @@
         <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="HSPIPluginA" d:TargetPath="|HSPIPluginA;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
         <Asset Type="Homeseer.1.0.0.nupkg" d:Source="File" Path="Packages\Homeseer.1.0.0.nupkg" d:VsixSubPath="Packages" />
         <Asset Type="HSPI.1.0.0.nupkg" d:Source="File" Path="Packages\HSPI.1.0.0.nupkg" d:VsixSubPath="Packages" />
+        <Asset Type="CommandLineParser.1.9.71.nupkg" d:Source="File" Path="Packages\CommandLineParser.1.9.71.nupkg" d:VsixSubPath="Packages" />
     </Assets>
 </PackageManifest>

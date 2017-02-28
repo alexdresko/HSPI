@@ -51,6 +51,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommandLine, Version=1.9.71.2, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommandLineParser.1.9.71\lib\net45\CommandLine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="HomeSeerAPI, Version=1.0.2.1, Culture=neutral, processorArchitecture=x86">
       <HintPath>..\packages\Homeseer.1.0.0\lib\net45\HomeSeerAPI.dll</HintPath>
       <Private>True</Private>
@@ -70,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HSPIBase.cs" />
+    <Compile Include="Options.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Connector.cs" />
   </ItemGroup>
