@@ -11,7 +11,6 @@ Welcome to HSPI's documentation!
    :caption: Contents:
 
 
-
 Indices and tables
 ==================
 
