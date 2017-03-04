@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Specialized;
 using HomeSeerAPI;
-using HSPI;
+using Hspi;
 
 //TODO: namespace $safeprojectname$
 namespace HSPIPluginA.Dev

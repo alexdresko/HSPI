@@ -7,7 +7,7 @@
     <ProjectGuid>{5A16BE5F-4498-4AF1-9C59-3DB79662EBD7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HSPI</RootNamespace>
+    <RootNamespace>Hspi</RootNamespace>
     <AssemblyName>HSPI</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -73,7 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="PageBuilder.cs" />
     <Compile Include="HSPIBase2.cs" />
     <Compile Include="HSPIBase.cs" />
     <Compile Include="Options.cs" />
