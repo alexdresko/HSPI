@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using HomeSeerAPI;
 
-namespace HSPI
+namespace Hspi
 {
     /// <summary>
     ///     Base class for HSPI plugin.

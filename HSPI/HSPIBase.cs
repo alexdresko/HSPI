@@ -6,7 +6,7 @@ using HSCF.Communication.Scs.Communication;
 using HSCF.Communication.Scs.Communication.EndPoints.Tcp;
 using HSCF.Communication.ScsServices.Client;
 
-namespace HSPI
+namespace Hspi
 {
     // ReSharper disable once InconsistentNaming
     public abstract class HspiBase : IPlugInAPI

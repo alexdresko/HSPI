@@ -1,4 +1,4 @@
-﻿using HSPI;
+﻿using Hspi;
 
 //TODO: namespace $safeprojectname$
 namespace HSPIPluginA.Dev

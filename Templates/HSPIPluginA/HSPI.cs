@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using HomeSeerAPI;
-using HSPI;
+using Hspi;
 
 namespace $safeprojectname$
 {
     // ReSharper disable once InconsistentNaming
-    public class HSPI : HSPIBase
+    public class HSPI : HspiBase
     {
         public override string InstanceFriendlyName()
         {
@@ -15,12 +15,12 @@ namespace $safeprojectname$
 
         public override IPlugInAPI.strInterfaceStatus InterfaceStatus()
         {
-            return new IPlugInAPI.strInterfaceStatus { intStatus = IPlugInAPI.enumInterfaceStatus.OK };
+            return new IPlugInAPI.strInterfaceStatus {intStatus = IPlugInAPI.enumInterfaceStatus.OK};
         }
 
         public override int Capabilities()
         {
-            return (int)Enums.eCapabilities.CA_IO;
+            return (int) Enums.eCapabilities.CA_IO;
         }
 
         public override int AccessLevel()
@@ -278,6 +278,11 @@ namespace $safeprojectname$
         protected override bool GetHscomPort()
         {
             return true;
+        }
+
+        public override void SetDeviceValue(int refId, double value, bool trigger = true)
+        {
+            
         }
     }
 }

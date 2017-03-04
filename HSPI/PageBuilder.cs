@@ -21,7 +21,7 @@
 using System.Collections.Specialized;
 using Scheduler;
 
-namespace HSPI
+namespace Hspi
 {
     /// <summary>
     ///     This class adds some common support functions for creating the web pages used by HomeSeer plugins.
