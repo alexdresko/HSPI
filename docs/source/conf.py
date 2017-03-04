@@ -37,8 +37,7 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
-    'sphinx.ext.viewcode',
-    'sphinxcontrib.disqus']
+    'sphinx.ext.viewcode']
 
 disqus_shortname = 'hspi'
 
