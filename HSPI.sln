@@ -6,6 +6,13 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSPI", "HSPI\HSPI.csproj", "{5A16BE5F-4498-4AF1-9C59-3DB79662EBD7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C3AF5F1F-6760-4728-B04D-753404501E48}"
+	ProjectSection(SolutionItems) = preProject
+		copy-devtotemplate.ps1 = copy-devtotemplate.ps1
+		package-nuget.ps1 = package-nuget.ps1
+		package-template.ps1 = package-template.ps1
+		test-template.ps1 = test-template.ps1
+		update-vsixversion.ps1 = update-vsixversion.ps1
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{85A80E33-7B0C-4913-A709-F98A7F32829A}"
 EndProject
