@@ -2,7 +2,7 @@
 using System.Threading;
 using CommandLine;
 
-namespace HSPI
+namespace Hspi
 {
     public class Connector
     {

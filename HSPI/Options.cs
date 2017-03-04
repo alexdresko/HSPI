@@ -1,7 +1,7 @@
 using CommandLine;
 using CommandLine.Text;
 
-namespace HSPI
+namespace Hspi
 {
     public class Options
     {

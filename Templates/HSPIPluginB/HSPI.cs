@@ -1,4 +1,4 @@
-﻿using HSPI;
+using Hspi;
 
 namespace $safeprojectname$
 {
