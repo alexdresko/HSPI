@@ -1,5 +1,7 @@
 ﻿.\copy-devtotemplate.ps1
 
+.\package-nuget.ps1
+
 $file = "$PSScriptRoot\Templates\HomeSeerTemplates\source.extension.vsixmanifest"
 
 [xml]$xml = get-content -Path $file
