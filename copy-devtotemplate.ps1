@@ -1,8 +1,5 @@
 ﻿cd $PSScriptRoot
 
-nuget pack hspi -build -verbosity detailed
-copy .\HSPI.1.0.0.nupkg .\Templates\HomeSeerTemplates\Packages -Verbose
-
 gci templates\*.dev -Directory | foreach {
     $sourceDirectory = $_.FullName
     $destinationDirectory = $sourceDirectory.Replace(".Dev", "")
