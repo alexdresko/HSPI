@@ -402,7 +402,7 @@ namespace Hspi
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary> Get the name of this plugin </summary>
-        public abstract string GetName();
+        protected abstract string GetName();
 
         public void Connect(string serverAddress, int serverPort)
         {
