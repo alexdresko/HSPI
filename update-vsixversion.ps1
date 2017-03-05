@@ -11,7 +11,7 @@ if ($newVersion -eq "") {
 
     $newVersion = "$($version.Major).$($version.Minor).$($version.Build + 1)"
 } else {
-    $newVersion = $newVersion -replace "(\d*\.\d*\.\d*\.\d).*", "`$1"
+    $newVersion = $newVersion -replace "(\d*\.\d*\.\d*).*", "`$1"
 }
 
 $xml.PackageManifest.Metadata.Identity.Version = $newVersion

@@ -8,6 +8,7 @@
     <Icon>HS-Button_400x400.png</Icon>
     <PreviewImage>HS-Button_400x400.png</PreviewImage>
     <Tags>homeseer home automation hspi</Tags>
+      <GalleryFlags>Public</GalleryFlags>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
