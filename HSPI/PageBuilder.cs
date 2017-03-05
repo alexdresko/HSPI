@@ -174,10 +174,12 @@ namespace Hspi
         /// </summary>
         /// <param name="name">The name used to create the references for the text box.</param>
         /// <param name="Checked">if set to <c>true</c> [checked].</param>
+        /// <param name="AutoPostBack">if set to <c>true</c></param>
+        /// <param name="SubmitForm">if set to <c>true</c></param>
         /// <returns>The text to insert in the web page to create the check box.</returns>
-        protected string BuildCheckBox(string name, bool Checked = false)
+        protected string BuildCheckBox(string Name, bool Checked = false, bool AutoPostBack = true, bool SubmitForm = true)
         {
-            return "<div id='" + name + "_div'>" + FormCheckBox(name, Checked) + "</div>";
+            return "<div id='" + Name + "_div'>" + FormCheckBox(Name, Checked, AutoPostBack, SubmitForm) + "</div>";
         }
 
         /// <summary>
@@ -185,9 +187,11 @@ namespace Hspi
         /// </summary>
         /// <param name="name">The name used to create the references for the text box.</param>
         /// <param name="Checked">if set to <c>true</c> [checked].</param>
-        protected void UpdateCheckBox(string name, bool Checked = false)
+        /// <param name="AutoPostBack">if set to <c>true</c></param>
+        /// <param name="SubmitForm">if set to <c>true</c></param>
+        protected void UpdateCheckBox(string Name, bool Checked = false, bool AutoPostBack = true, bool SubmitForm = true)
         {
-            divToUpdate.Add(name + "_div", FormCheckBox(name, Checked));
+            divToUpdate.Add(Name + "_div", FormCheckBox(Name, Checked, AutoPostBack, SubmitForm));
         }
 
         /// <summary>
