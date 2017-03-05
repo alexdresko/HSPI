@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using HomeSeerAPI;
+using Hspi.Exceptions;
 using HSCF.Communication.Scs.Communication;
 using HSCF.Communication.Scs.Communication.EndPoints.Tcp;
 using HSCF.Communication.ScsServices.Client;
@@ -11,11 +12,11 @@ namespace Hspi
     // ReSharper disable once InconsistentNaming
     public abstract class HspiBase : IPlugInAPI
     {
-        protected IAppCallbackAPI Callback;
-        protected IScsServiceClient<IAppCallbackAPI> CallbackClient;
-        protected IHSApplication Hs;
-        protected IScsServiceClient<IHSApplication> HsClient;
-        public bool Shutdown;
+        protected IAppCallbackAPI Callback { get; set; }
+        protected IScsServiceClient<IAppCallbackAPI> CallbackClient { get; set; }
+        protected IHSApplication Hs { get; set; }
+        protected IScsServiceClient<IHSApplication> HsClient { get; set; }
+        public bool Shutdown { get; set; }
 
         /// <summary>
         ///     Test our SCS client connection: <see cref="HSPI" /> is connected.
@@ -404,6 +405,7 @@ namespace Hspi
         /// <summary> Get the name of this plugin </summary>
         protected abstract string GetName();
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "apiVersion")]
         public void Connect(string serverAddress, int serverPort)
         {
             // This method is called by our console wrapper at launch time
@@ -422,7 +424,7 @@ namespace Hspi
             }
             catch (Exception ex)
             {
-                throw new Exception("Error connecting homeseer SCS client: " + ex.Message, ex);
+                throw new HspiConnectionException("Error connecting homeseer SCS client: " + ex.Message, ex);
             }
 
             // part 2 - callback object Proxy
@@ -438,7 +440,7 @@ namespace Hspi
             }
             catch (Exception ex)
             {
-                throw new Exception("Error connecting callback SCS client: " + ex.Message, ex);
+                throw new HspiConnectionException("Error connecting callback SCS client: " + ex.Message, ex);
             }
 
             // Establish the reverse connection from homeseer back to our plugin
@@ -448,7 +450,7 @@ namespace Hspi
             }
             catch (Exception ex)
             {
-                throw new Exception("Error connecting homeseer to our plugin: " + ex.Message, ex);
+                throw new HspiConnectionException("Error connecting homeseer to our plugin: " + ex.Message, ex);
             }
         }
 
