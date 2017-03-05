@@ -271,7 +271,7 @@ namespace HSPIPluginA.Dev
             return 0;
         }
 
-        protected override string GetName()
+        public override string GetName()
         {
             //TODO: return "$projectname$";
             return "HSPIPluginA.Dev";
