@@ -269,18 +269,17 @@ namespace Hspi
         }
 
         /// <summary>
-        ///     Build a drop list for a web page.
+        /// Build a drop list for a web page.
         /// </summary>
-        /// <param name="name">The name used to create the references for the list box.</param>
-        /// <param name="options">Data value pairs used to populate the list box.</param>
-        /// <param name="selected">Index of the item to be selected.</param>
-        /// <param name="selectedValue">Name of the value to be selected.</param>
+        /// <param name="Name">The name used to create the references for the list box.</param>
+        /// <param name="Options">Data value pairs used to populate the list box.</param>
+        /// <param name="Selected">Index of the item to be selected.</param>
+        /// <param name="SelectedValue">Name of the value to be selected.</param>
+        /// <param name="SubmitForm">if set to <c>true</c></param>
         /// <returns>The text to insert in the web page to create the drop list.</returns>
-        protected string BuildDropList(string name, ref NameValueCollection options, int selected = -1,
-            string selectedValue = "")
+        protected string BuildDropList(string Name, ref NameValueCollection Options, int Selected = -1, bool SubmitForm = true, string SelectedValue = "")
         {
-            return "<div id='" + name + "_div'>" +
-                   FormDropDown(name, ref options, selected, selectedValue: selectedValue) + "</div>";
+            return "<div id='" + Name + "_div'>" + FormDropDown(Name, ref Options, Selected, submitForm: SubmitForm, selectedValue: SelectedValue) + "</div>";
         }
 
         /// <summary>
