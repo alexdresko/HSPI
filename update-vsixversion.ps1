@@ -10,10 +10,12 @@ if ($newVersion -eq "") {
     $version = [System.Version]::Parse($xml.PackageManifest.Metadata.Identity.Version)
 
     $newVersion = "$($version.Major).$($version.Minor).$($version.Build + 1)"
+} else {
+    $newVersion = $newVersion -replace "(\d*\.\d*\.\d*\.\d).*", "`$1"
 }
 
 $xml.PackageManifest.Metadata.Identity.Version = $newVersion
 
 $xml.Save($file)
 
-"Updated $file to $newVersion"
+"Updated $file to $newVersion "
