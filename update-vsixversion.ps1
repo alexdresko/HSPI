@@ -18,4 +18,4 @@ $xml.PackageManifest.Metadata.Identity.Version = $newVersion
 
 $xml.Save($file)
 
-write-host "Updated $file to $newVersion" -Verbose
+"Updated $file to $newVersion"  | Write-Host  -ForegroundColor Cyan -NoNewline
