@@ -174,10 +174,12 @@ namespace Hspi
         /// </summary>
         /// <param name="name">The name used to create the references for the text box.</param>
         /// <param name="Checked">if set to <c>true</c> [checked].</param>
+        /// <param name="autoPostBack">if set to <c>true</c></param>
+        /// <param name="submitForm">if set to <c>true</c></param>
         /// <returns>The text to insert in the web page to create the check box.</returns>
-        protected string BuildCheckBox(string name, bool Checked = false)
+        protected string BuildCheckBox(string name, bool Checked = false, bool autoPostBack = true, bool submitForm = true)
         {
-            return "<div id='" + name + "_div'>" + FormCheckBox(name, Checked) + "</div>";
+            return "<div id='" + name + "_div'>" + FormCheckBox(name, Checked, autoPostBack, submitForm) + "</div>";
         }
 
         /// <summary>
@@ -185,9 +187,11 @@ namespace Hspi
         /// </summary>
         /// <param name="name">The name used to create the references for the text box.</param>
         /// <param name="Checked">if set to <c>true</c> [checked].</param>
-        protected void UpdateCheckBox(string name, bool Checked = false)
+        /// <param name="autoPostBack">if set to <c>true</c></param>
+        /// <param name="submitForm">if set to <c>true</c></param>
+        protected void UpdateCheckBox(string name, bool Checked = false, bool autoPostBack = true, bool submitForm = true)
         {
-            divToUpdate.Add(name + "_div", FormCheckBox(name, Checked));
+            divToUpdate.Add(name + "_div", FormCheckBox(name, Checked, autoPostBack, submitForm));
         }
 
         /// <summary>
@@ -265,18 +269,17 @@ namespace Hspi
         }
 
         /// <summary>
-        ///     Build a drop list for a web page.
+        /// Build a drop list for a web page.
         /// </summary>
-        /// <param name="name">The name used to create the references for the list box.</param>
-        /// <param name="options">Data value pairs used to populate the list box.</param>
-        /// <param name="selected">Index of the item to be selected.</param>
-        /// <param name="selectedValue">Name of the value to be selected.</param>
+        /// <param name="Name">The name used to create the references for the list box.</param>
+        /// <param name="Options">Data value pairs used to populate the list box.</param>
+        /// <param name="Selected">Index of the item to be selected.</param>
+        /// <param name="SelectedValue">Name of the value to be selected.</param>
+        /// <param name="SubmitForm">if set to <c>true</c></param>
         /// <returns>The text to insert in the web page to create the drop list.</returns>
-        protected string BuildDropList(string name, ref NameValueCollection options, int selected = -1,
-            string selectedValue = "")
+        protected string BuildDropList(string Name, ref NameValueCollection Options, int Selected = -1, bool SubmitForm = true, string SelectedValue = "")
         {
-            return "<div id='" + name + "_div'>" +
-                   FormDropDown(name, ref options, selected, selectedValue: selectedValue) + "</div>";
+            return "<div id='" + Name + "_div'>" + FormDropDown(Name, ref Options, Selected, submitForm: SubmitForm, selectedValue: SelectedValue) + "</div>";
         }
 
         /// <summary>
