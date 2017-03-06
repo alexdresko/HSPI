@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics.CodeAnalysis;
 using HomeSeerAPI;
 using Hspi.Exceptions;
 using HSCF.Communication.Scs.Communication;
@@ -405,7 +406,7 @@ namespace Hspi
         /// <summary> Get the name of this plugin </summary>
         protected abstract string GetName();
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "apiVersion")]
+        [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "apiVersion", Justification = "This is what the old HS sample does, soooooo... ")]
         public void Connect(string serverAddress, int serverPort)
         {
             // This method is called by our console wrapper at launch time

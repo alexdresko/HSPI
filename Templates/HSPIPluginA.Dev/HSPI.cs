@@ -4,6 +4,7 @@ using HomeSeerAPI;
 using Hspi;
 
 //TODO: namespace $safeprojectname$
+
 namespace HSPIPluginA.Dev
 {
     // ReSharper disable once InconsistentNaming
@@ -284,7 +285,6 @@ namespace HSPIPluginA.Dev
 
         public override void SetDeviceValue(int refId, double value, bool trigger = true)
         {
-            
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Hspi;
 
 //TODO: namespace $safeprojectname$
+
 namespace HSPIPluginB.Dev
 {
     // ReSharper disable once InconsistentNaming

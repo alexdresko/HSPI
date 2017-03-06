@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005"
+            xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
     <TemplateData>
         <Name>HSPIPluginA</Name>
         <Description>HomeSeer HSPIPluginA project template</Description>
@@ -27,10 +29,11 @@
         <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
     </WizardExtension>
     <WizardData>
-        <packages repository="extension" repositoryId="HomeSeerTemplates.Alex Dresko.82028f47-9623-4359-a6bf-244390c19608">
-            <package id="Homeseer" version="1.0.0"/>
-            <package id="HSPI" version="1.0.0"/>
-            <package id="CommandLineParser" version="1.9.71"/>
+        <packages repository="extension"
+                  repositoryId="HomeSeerTemplates.Alex Dresko.82028f47-9623-4359-a6bf-244390c19608">
+            <package id="Homeseer" version="1.0.0" />
+            <package id="HSPI" version="1.0.0" />
+            <package id="CommandLineParser" version="1.9.71" />
         </packages>
     </WizardData>
 </VSTemplate>
