@@ -265,7 +265,7 @@ namespace Hspi
         }
 
         /// <summary>
-        ///     Build a drop list for a web page.
+        /// Build a drop list for a web page.
         /// </summary>
         /// <param name="name">The name used to create the references for the list box.</param>
         /// <param name="options">Data value pairs used to populate the list box.</param>
