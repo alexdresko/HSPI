@@ -58,7 +58,7 @@ namespace Hspi
         /// <returns>The text to insert in the web page to create the button.</returns>
         protected string BuildButton(string text, string name, bool enabled = true)
         {
-            return "<div id='" + name + "_div'>" + FormButton(name, text, enabled: enabled) + "</div>";
+            return $"<div id=\'{name}_div\'>{FormButton(name, text, enabled: enabled)}</div>";
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Hspi
         /// <param name="enabled">if set to <c>true</c> [enabled].</param>
         protected void UpdateButton(string text, string name, bool enabled = true)
         {
-            divToUpdate.Add(name + "_div", FormButton(name, text, enabled: enabled));
+            divToUpdate.Add($"{name}_div", FormButton(name, text, enabled: enabled));
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Hspi
         {
             var b = new clsJQuery.jqButton(name, label, PageName, submitForm)
             {
-                id = "o" + name,
+                id = $"o{name}",
                 imagePathNormal = imagePathNormal
             };
             b.imagePathPressed = string.IsNullOrWhiteSpace(imagePathPressed) ? b.imagePathNormal : imagePathPressed;
@@ -102,7 +102,7 @@ namespace Hspi
         /// <returns>The text to insert in the web page to create the label.</returns>
         protected static string BuildLabel(string name, string msg = "")
         {
-            return "<div id='" + name + "_div'>" + FormLabel(name, msg) + "</div>";
+            return $"<div id=\'{name}_div\'>{FormLabel(name, msg)}</div>";
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Hspi
         /// <param name="name">The name used to create the references for the label.</param>
         protected void UpdateLabel(string name, string msg = "")
         {
-            divToUpdate.Add(name + "_div", FormLabel(name, msg));
+            divToUpdate.Add($"{name}_div", FormLabel(name, msg));
         }
 
         /// <summary>
@@ -122,9 +122,9 @@ namespace Hspi
         {
             string content;
             if (visible)
-                content = message + "<input id='" + name + "' Name='" + name + "' Type='hidden'>";
+                content = $"{message}<input id=\'{name}\' Name=\'{name}\' Type=\'hidden\'>";
             else
-                content = "<input id='" + name + "' Name='" + name + "' Type='hidden' value='" + message + "'>";
+                content = $"<input id=\'{name}\' Name=\'{name}\' Type=\'hidden\' value=\'{message}\'>";
             return content;
         }
 
@@ -137,7 +137,7 @@ namespace Hspi
         /// <returns>The text to insert in the web page to create the text box.</returns>
         protected static string BuildTextBox(string name, string text = "", bool allowEdit = true)
         {
-            return "<div id='" + name + "_div'>" + HtmlTextBox(name, text, 20, allowEdit) + "</div>";
+            return $"<div id=\'{name}_div\'>{HtmlTextBox(name, text, 20, allowEdit)}</div>";
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Hspi
         /// <param name="allowEdit">if set to <c>true</c> allow the text to be edited.</param>
         protected void UpdateTextBox(string name, string text = "", bool allowEdit = true)
         {
-            divToUpdate.Add(name + "_div", HtmlTextBox(name, text, 20, allowEdit));
+            divToUpdate.Add($"{name}_div", HtmlTextBox(name, text, 20, allowEdit));
         }
 
         /// <summary>
@@ -165,8 +165,8 @@ namespace Hspi
                 sReadOnly = "readonly='readonly'";
             }
 
-            return "<input type='text' id='o" + name + "' style='" + style + "' size='" + size + "' name='" + name +
-                   "' " + sReadOnly + " value='" + defaultText + "'>";
+            return
+                $"<input type=\'text\' id=\'o{name}\' style=\'{style}\' size=\'{size}\' name=\'{name}\' {sReadOnly} value=\'{defaultText}\'>";
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Hspi
         /// <returns>The text to insert in the web page to create the check box.</returns>
         protected string BuildCheckBox(string name, bool @checked = false)
         {
-            return "<div id='" + name + "_div'>" + FormCheckBox(name, @checked) + "</div>";
+            return $"<div id=\'{name}_div\'>{FormCheckBox(name, @checked)}</div>";
         }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace Hspi
         /// <param name="checked">if set to <c>true</c> [checked].</param>
         protected void UpdateCheckBox(string name, bool @checked = false)
         {
-            divToUpdate.Add(name + "_div", FormCheckBox(name, @checked));
+            divToUpdate.Add($"{name}_div", FormCheckBox(name, @checked));
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace Hspi
         {
             var cb = new clsJQuery.jqCheckBox(name, string.Empty, PageName, autoPostBack, submitForm)
             {
-                id = "o" + name,
+                id = $"o{name}",
                 @checked = @checked
             };
             return cb.Build();
@@ -217,8 +217,7 @@ namespace Hspi
         protected string BuildListBox(string name, NameValueCollection options, int selected = -1,
             string selectedValue = "", int width = 150, bool enabled = true)
         {
-            return "<div id='" + name + "_div'>" +
-                   FormListBox(name, options, selected, selectedValue, width, enabled) + "</div>";
+            return $"<div id=\'{name}_div\'>{FormListBox(name, options, selected, selectedValue, width, enabled)}</div>";
         }
 
         /// <summary>
@@ -233,7 +232,7 @@ namespace Hspi
         protected void UpdateListBox(string name, NameValueCollection options, int selected = -1,
             string selectedValue = "", int width = 150, bool enabled = true)
         {
-            divToUpdate.Add(name + "_div", FormListBox(name, options, selected, selectedValue, width, enabled));
+            divToUpdate.Add($"{name}_div", FormListBox(name, options, selected, selectedValue, width, enabled));
         }
 
         /// <summary>
@@ -245,8 +244,8 @@ namespace Hspi
             var lb = new clsJQuery.jqListBox(name, PageName);
 
             lb.items.Clear();
-            lb.id = "o" + name;
-            lb.style = "width: " + width + "px;";
+            lb.id = $"o{name}";
+            lb.style = $"width: {width}px;";
             lb.enabled = enabled;
 
             if (options != null)
@@ -275,8 +274,7 @@ namespace Hspi
         protected string BuildDropList(string name, NameValueCollection options, int selected = -1,
             string selectedValue = "")
         {
-            return "<div id='" + name + "_div'>" +
-                   FormDropDown(name, options, selected, selectedValue: selectedValue) + "</div>";
+            return $"<div id=\'{name}_div\'>{FormDropDown(name, options, selected, selectedValue: selectedValue)}</div>";
         }
 
         /// <summary>
@@ -289,7 +287,7 @@ namespace Hspi
         protected void UpdateDropList(string name, NameValueCollection options, int selected = -1,
             string selectedValue = "")
         {
-            divToUpdate.Add(name + "_div", FormDropDown(name, options, selected, selectedValue: selectedValue));
+            divToUpdate.Add($"{name}_div", FormDropDown(name, options, selected, selectedValue: selectedValue));
         }
 
         /// <summary>
@@ -303,10 +301,10 @@ namespace Hspi
             var dd = new clsJQuery.jqDropList(name, PageName, submitForm)
             {
                 selectedItemIndex = -1,
-                id = "o" + name,
+                id = $"o{name}",
                 autoPostBack = autoPostback,
                 toolTip = tooltip,
-                style = "width: " + width + "px;",
+                style = $"width: {width}px;",
                 enabled = enabled
             };
 

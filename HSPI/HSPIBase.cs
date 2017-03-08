@@ -458,7 +458,7 @@ namespace Hspi
             }
             catch (Exception ex)
             {
-                throw new HspiConnectionException("Error connecting homeseer SCS client: " + ex.Message, ex);
+                throw new HspiConnectionException($"Error connecting homeseer SCS client: {ex.Message}", ex);
             }
 
             // part 2 - callback object Proxy
@@ -474,7 +474,7 @@ namespace Hspi
             }
             catch (Exception ex)
             {
-                throw new HspiConnectionException("Error connecting callback SCS client: " + ex.Message, ex);
+                throw new HspiConnectionException($"Error connecting callback SCS client: {ex.Message}", ex);
             }
 
             // Establish the reverse connection from homeseer back to our plugin
@@ -484,7 +484,7 @@ namespace Hspi
             }
             catch (Exception ex)
             {
-                throw new HspiConnectionException("Error connecting homeseer to our plugin: " + ex.Message, ex);
+                throw new HspiConnectionException($"Error connecting homeseer to our plugin: {ex.Message}", ex);
             }
         }
 

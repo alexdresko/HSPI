@@ -29,7 +29,7 @@ namespace Hspi
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("  connection to homeseer failed: " + ex.Message);
+                    Console.WriteLine($"  connection to homeseer failed: {ex.Message}");
                     return;
                 }
 
@@ -58,7 +58,7 @@ namespace Hspi
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Unhandled exception from Plugin: " + ex.Message);
+                    Console.WriteLine($"Unhandled exception from Plugin: {ex.Message}");
                 }
             }
         }
