@@ -24,7 +24,7 @@ Until we have awesome names for the templates, you’ll have to use this key to 
 
     You get all of the benefits of HSPI, without having to implement everything in HomeSeer’s ``IPluginAPI`` interface. The base class implements suitable defaults for basic plugins, preventing you from having to understand everything in ``IPluginAPI``.  The flip side to such minimalistic code is that it’s not obvious which methods you *can* override. 
 
-The framework
+Code Quality
 -------------
 
 * All C# builds in HSPI are validated against a fairly strict set of static code analysis rules in an effort to automate code quality checks. 
