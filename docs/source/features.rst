@@ -28,3 +28,4 @@ The framework
 -------------
 
 * All C# builds in HSPI are validated against a fairly strict set of static code analysis rules in an effort to automate code quality checks. 
+* A Resharper "Code Cleanup" setting called "HSPI" helps to ensure all code follows the same standards.

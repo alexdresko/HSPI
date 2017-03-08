@@ -14,10 +14,15 @@ namespace Hspi
     public abstract class HspiBase : IPlugInAPI
     {
         protected IAppCallbackAPI Callback { get; set; }
+
         protected IScsServiceClient<IAppCallbackAPI> CallbackClient { get; set; }
+
         protected IHSApplication HS { get; set; }
-        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "Hs", Justification = "R# doesn't like MS's standard.")]
+
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "Hs",
+            Justification = "R# doesn't like MS's standard.")]
         protected IScsServiceClient<IHSApplication> HsClient { get; set; }
+
         public bool Shutdown { get; set; }
 
         /// <summary>
@@ -177,7 +182,10 @@ namespace Hspi
         /// <param name="userRights">The rights of the logged in user.</param>
         /// <returns>Enums.ConfigDevicePostReturn.</returns>
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
-        public abstract Enums.ConfigDevicePostReturn ConfigDevicePost(int deviceId, string data, string user, int userRights);
+        public abstract Enums.ConfigDevicePostReturn ConfigDevicePost(int deviceId,
+            string data,
+            string user,
+            int userRights);
 
         /// <summary>
         ///     If SupportsConfigDevice returns <c>true</c>, this function will be called when the device properties are displayed
@@ -398,6 +406,7 @@ namespace Hspi
         public abstract bool get_HasConditions(int triggerNumber);
 
         public bool HasTriggers => GetHasTriggers();
+
         public int TriggerCount => GetTriggerCount();
 
         /// <summary>
@@ -439,7 +448,8 @@ namespace Hspi
         /// <summary> Get the name of this plugin </summary>
         protected abstract string GetName();
 
-        [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "apiVersion", Justification = "This is what the old HS sample does, soooooo... ")]
+        [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "apiVersion",
+            Justification = "This is what the old HS sample does, soooooo... ")]
         public void Connect(string serverAddress, int serverPort)
         {
             // This method is called by our console wrapper at launch time
@@ -453,6 +463,7 @@ namespace Hspi
                         this);
                 HsClient.Connect();
                 HS = HsClient.ServiceProxy;
+
                 // ReSharper disable once UnusedVariable
                 var apiVersion = HS.APIVersion; // just to make sure our connection is valid
             }
@@ -469,6 +480,7 @@ namespace Hspi
                         new ScsTcpEndPoint(serverAddress, serverPort), this);
                 CallbackClient.Connect();
                 Callback = CallbackClient.ServiceProxy;
+
                 // ReSharper disable once UnusedVariable
                 var apiVersion = Callback.APIVersion; // just to make sure our connection is valid
             }

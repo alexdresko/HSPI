@@ -45,10 +45,7 @@ namespace Hspi
     {
         public override IPlugInAPI.strInterfaceStatus InterfaceStatus()
         {
-            var s = new IPlugInAPI.strInterfaceStatus
-            {
-                intStatus = IPlugInAPI.enumInterfaceStatus.OK
-            };
+            var s = new IPlugInAPI.strInterfaceStatus {intStatus = IPlugInAPI.enumInterfaceStatus.OK};
             return s;
         }
 
@@ -62,24 +59,20 @@ namespace Hspi
             return (int) Enums.eCapabilities.CA_IO;
         }
 
-
         public override int AccessLevel()
         {
             return 1;
         }
-
 
         protected override bool GetHscomPort()
         {
             return true;
         }
 
-
         public override bool SupportsAddDevice()
         {
             return false;
         }
-
 
         public override bool SupportsConfigDevice()
         {
@@ -91,7 +84,6 @@ namespace Hspi
             return false;
         }
 
-
         public override bool SupportsMultipleInstances()
         {
             return false;
@@ -102,23 +94,19 @@ namespace Hspi
             return false;
         }
 
-
         public override bool RaisesGenericCallbacks()
         {
             return false;
         }
 
-
         public override void HSEvent(Enums.HSEvent eventType, object[] parameters)
         {
         }
-
 
         public override string InitIO(string port)
         {
             return "";
         }
-
 
         public override IPlugInAPI.PollResultInfo PollDevice(int deviceId)
         {
@@ -146,24 +134,20 @@ namespace Hspi
             // homeseer will inform us when the one of our devices has changed.  Push that change through to the field.
         }
 
-
         public override void ShutdownIO()
         {
             // let our console wrapper know we are finished
         }
-
 
         public override SearchReturn[] Search(string searchString, bool regEx)
         {
             return null;
         }
 
-
         public override string ActionBuildUI(string uniqueControlId, IPlugInAPI.strTrigActInfo actionInfo)
         {
             return "";
         }
-
 
         public override bool ActionConfigured(IPlugInAPI.strTrigActInfo actionInfo)
         {
@@ -180,7 +164,6 @@ namespace Hspi
             return "";
         }
 
-
         public override IPlugInAPI.strMultiReturn ActionProcessPostUI(NameValueCollection postData,
             IPlugInAPI.strTrigActInfo actionInfo)
         {
@@ -192,12 +175,10 @@ namespace Hspi
             return false;
         }
 
-
         public override string get_ActionName(int actionNumber)
         {
             return "";
         }
-
 
         public override bool get_Condition(IPlugInAPI.strTrigActInfo actionInfo)
         {
@@ -218,12 +199,10 @@ namespace Hspi
             return "";
         }
 
-
         public override string TriggerFormatUI(IPlugInAPI.strTrigActInfo actionInfo)
         {
             return "";
         }
-
 
         public override IPlugInAPI.strMultiReturn TriggerProcessPostUI(NameValueCollection postData,
             IPlugInAPI.strTrigActInfo actionInfo)
@@ -235,7 +214,6 @@ namespace Hspi
         {
             return false;
         }
-
 
         public override bool TriggerTrue(IPlugInAPI.strTrigActInfo actionInfo)
         {
@@ -262,7 +240,6 @@ namespace Hspi
             return "";
         }
 
-
         public override bool HandleAction(IPlugInAPI.strTrigActInfo actionInfo)
         {
             return false;
@@ -272,59 +249,52 @@ namespace Hspi
         {
         }
 
-
         public override string GenPage(string link)
         {
             return "";
         }
-
 
         public override string PagePut(string data)
         {
             return "";
         }
 
-
         public override string GetPagePlugin(string page, string user, int userRights, string queryString)
         {
             return "";
         }
-
 
         public override string PostBackProc(string page, string data, string user, int userRights)
         {
             return "";
         }
 
-
         public override string ConfigDevice(int deviceId, string user, int userRights, bool newDevice)
         {
             return "";
         }
 
-
-        public override Enums.ConfigDevicePostReturn ConfigDevicePost(int deviceId, string data, string user, int userRights)
+        public override Enums.ConfigDevicePostReturn ConfigDevicePost(int deviceId,
+            string data,
+            string user,
+            int userRights)
         {
             return Enums.ConfigDevicePostReturn.DoneAndCancel;
         }
-
 
         public override object PluginFunction(string functionName, object[] parameters)
         {
             return null;
         }
 
-
         public override object PluginPropertyGet(string propertyName, object[] parameters)
         {
             return null;
         }
 
-
         public override void PluginPropertySet(string propertyName, object value)
         {
         }
-
 
         public override void SetDeviceValue(int deviceId, double value, bool trigger = true)
         {

@@ -75,9 +75,14 @@ namespace Hspi
         /// <summary>
         ///     Return the string required to create a web page button.
         /// </summary>
-        protected string FormButton(string name, string label = "Submit", bool submitForm = true,
-            string imagePathNormal = "", string imagePathPressed = "", string toolTip = "",
-            bool enabled = true, string style = "")
+        protected string FormButton(string name,
+            string label = "Submit",
+            bool submitForm = true,
+            string imagePathNormal = "",
+            string imagePathPressed = "",
+            string toolTip = "",
+            bool enabled = true,
+            string style = "")
         {
             var b = new clsJQuery.jqButton(name, label, PageName, submitForm)
             {
@@ -122,9 +127,13 @@ namespace Hspi
         {
             string content;
             if (visible)
+            {
                 content = $"{message}<input id=\'{name}\' Name=\'{name}\' Type=\'hidden\'>";
+            }
             else
+            {
                 content = $"<input id=\'{name}\' Name=\'{name}\' Type=\'hidden\' value=\'{message}\'>";
+            }
             return content;
         }
 
@@ -193,7 +202,9 @@ namespace Hspi
         /// <summary>
         ///     Return the string required to create a web page check box.
         /// </summary>
-        protected string FormCheckBox(string name, bool @checked = false, bool autoPostBack = true,
+        protected string FormCheckBox(string name,
+            bool @checked = false,
+            bool autoPostBack = true,
             bool submitForm = true)
         {
             var cb = new clsJQuery.jqCheckBox(name, string.Empty, PageName, autoPostBack, submitForm)
@@ -214,8 +225,12 @@ namespace Hspi
         /// <param name="width">Width of the list box</param>
         /// <param name="enabled">if set to <c>true</c> [enabled].  Doesn't seem to work.</param>
         /// <returns>The text to insert in the web page to create the list box.</returns>
-        protected string BuildListBox(string name, NameValueCollection options, int selected = -1,
-            string selectedValue = "", int width = 150, bool enabled = true)
+        protected string BuildListBox(string name,
+            NameValueCollection options,
+            int selected = -1,
+            string selectedValue = "",
+            int width = 150,
+            bool enabled = true)
         {
             return $"<div id=\'{name}_div\'>{FormListBox(name, options, selected, selectedValue, width, enabled)}</div>";
         }
@@ -229,8 +244,12 @@ namespace Hspi
         /// <param name="selectedValue">Name of the value to be selected.</param>
         /// <param name="width">Width of the list box</param>
         /// <param name="enabled">if set to <c>true</c> [enabled].  Doesn't seem to work.</param>
-        protected void UpdateListBox(string name, NameValueCollection options, int selected = -1,
-            string selectedValue = "", int width = 150, bool enabled = true)
+        protected void UpdateListBox(string name,
+            NameValueCollection options,
+            int selected = -1,
+            string selectedValue = "",
+            int width = 150,
+            bool enabled = true)
         {
             divToUpdate.Add($"{name}_div", FormListBox(name, options, selected, selectedValue, width, enabled));
         }
@@ -238,8 +257,12 @@ namespace Hspi
         /// <summary>
         ///     Return the string required to create a web page list box.
         /// </summary>
-        protected string FormListBox(string name, NameValueCollection options, int selected = -1,
-            string selectedValue = "", int width = 150, bool enabled = true)
+        protected string FormListBox(string name,
+            NameValueCollection options,
+            int selected = -1,
+            string selectedValue = "",
+            int width = 150,
+            bool enabled = true)
         {
             var lb = new clsJQuery.jqListBox(name, PageName);
 
@@ -253,25 +276,32 @@ namespace Hspi
                 for (var i = 0; i < options.Count; i++)
                 {
                     if (selected == -1 && selectedValue == options.GetKey(i))
+                    {
                         selected = i;
+                    }
                     lb.items.Add(options.GetKey(i));
                 }
+
                 if (selected >= 0)
+                {
                     lb.SelectedValue = options.GetKey(selected);
+                }
             }
 
             return lb.Build();
         }
 
         /// <summary>
-        /// Build a drop list for a web page.
+        ///     Build a drop list for a web page.
         /// </summary>
         /// <param name="name">The name used to create the references for the list box.</param>
         /// <param name="options">Data value pairs used to populate the list box.</param>
         /// <param name="selected">Index of the item to be selected.</param>
         /// <param name="selectedValue">Name of the value to be selected.</param>
         /// <returns>The text to insert in the web page to create the drop list.</returns>
-        protected string BuildDropList(string name, NameValueCollection options, int selected = -1,
+        protected string BuildDropList(string name,
+            NameValueCollection options,
+            int selected = -1,
             string selectedValue = "")
         {
             return $"<div id=\'{name}_div\'>{FormDropDown(name, options, selected, selectedValue: selectedValue)}</div>";
@@ -284,7 +314,9 @@ namespace Hspi
         /// <param name="options">Data value pairs used to populate the list box.</param>
         /// <param name="selected">Index of the item to be selected.</param>
         /// <param name="selectedValue">Name of the value to be selected.</param>
-        protected void UpdateDropList(string name, NameValueCollection options, int selected = -1,
+        protected void UpdateDropList(string name,
+            NameValueCollection options,
+            int selected = -1,
             string selectedValue = "")
         {
             divToUpdate.Add($"{name}_div", FormDropDown(name, options, selected, selectedValue: selectedValue));
@@ -293,9 +325,16 @@ namespace Hspi
         /// <summary>
         ///     Return the string required to create a web page drop list.
         /// </summary>
-        protected string FormDropDown(string name, NameValueCollection options, int selected, int width = 150,
-            bool submitForm = true, bool addBlankRow = false,
-            bool autoPostback = true, string tooltip = "", bool enabled = true, string ddMsg = "",
+        protected string FormDropDown(string name,
+            NameValueCollection options,
+            int selected,
+            int width = 150,
+            bool submitForm = true,
+            bool addBlankRow = false,
+            bool autoPostback = true,
+            string tooltip = "",
+            bool enabled = true,
+            string ddMsg = "",
             string selectedValue = "")
         {
             var dd = new clsJQuery.jqDropList(name, PageName, submitForm)
@@ -308,18 +347,21 @@ namespace Hspi
                 enabled = enabled
             };
 
-
             //Add a blank area to the top of the list
             if (addBlankRow)
+            {
                 dd.AddItem(ddMsg, string.Empty, false);
+            }
 
             if (options != null)
+            {
                 for (var i = 0; i < options.Count; i++)
                 {
                     var sel = i == selected || options.Get(i) == selectedValue;
 
                     dd.AddItem(options.GetKey(i), options.Get(i), sel);
                 }
+            }
 
             return dd.Build();
         }
