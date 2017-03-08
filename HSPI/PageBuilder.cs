@@ -39,7 +39,7 @@ namespace Hspi
     ///         </item>
     ///     </list>
     /// </summary>
-    /// <seealso cref="Scheduler.PageBuilderAndMenu.clsPageBuilder" />
+    /// <seealso cref="PageBuilderAndMenu.clsPageBuilder" />
     public class PageBuilder : PageBuilderAndMenu.clsPageBuilder
     {
         /// <summary>
@@ -58,7 +58,7 @@ namespace Hspi
         /// <returns>The text to insert in the web page to create the button.</returns>
         protected string BuildButton(string text, string name, bool enabled = true)
         {
-            return "<div id='" + name + "_div'>" + FormButton(name, text, enabled: enabled) + "</div>";
+            return $"<div id=\'{name}_div\'>{FormButton(name, text, enabled: enabled)}</div>";
         }
 
         /// <summary>
@@ -69,22 +69,27 @@ namespace Hspi
         /// <param name="enabled">if set to <c>true</c> [enabled].</param>
         protected void UpdateButton(string text, string name, bool enabled = true)
         {
-            divToUpdate.Add(name + "_div", FormButton(name, text, enabled: enabled));
+            divToUpdate.Add($"{name}_div", FormButton(name, text, enabled: enabled));
         }
 
         /// <summary>
         ///     Return the string required to create a web page button.
         /// </summary>
-        protected string FormButton(string name, string label = "Submit", bool submitForm = true,
-            string imagePathNormal = "", string imagePathPressed = "", string toolTip = "",
-            bool enabled = true, string style = "")
+        protected string FormButton(string name,
+            string label = "Submit",
+            bool submitForm = true,
+            string imagePathNormal = "",
+            string imagePathPressed = "",
+            string toolTip = "",
+            bool enabled = true,
+            string style = "")
         {
             var b = new clsJQuery.jqButton(name, label, PageName, submitForm)
             {
-                id = "o" + name,
+                id = $"o{name}",
                 imagePathNormal = imagePathNormal
             };
-            b.imagePathPressed = imagePathPressed == "" ? b.imagePathNormal : imagePathPressed;
+            b.imagePathPressed = string.IsNullOrWhiteSpace(imagePathPressed) ? b.imagePathNormal : imagePathPressed;
             b.toolTip = toolTip;
             b.enabled = enabled;
             b.style = style;
@@ -100,9 +105,9 @@ namespace Hspi
         /// <param name="msg">The text for the label.</param>
         /// <param name="name">The name used to create the references for the label.</param>
         /// <returns>The text to insert in the web page to create the label.</returns>
-        protected string BuildLabel(string name, string msg = "")
+        protected static string BuildLabel(string name, string msg = "")
         {
-            return "<div id='" + name + "_div'>" + FormLabel(name, msg) + "</div>";
+            return $"<div id=\'{name}_div\'>{FormLabel(name, msg)}</div>";
         }
 
         /// <summary>
@@ -112,19 +117,23 @@ namespace Hspi
         /// <param name="name">The name used to create the references for the label.</param>
         protected void UpdateLabel(string name, string msg = "")
         {
-            divToUpdate.Add(name + "_div", FormLabel(name, msg));
+            divToUpdate.Add($"{name}_div", FormLabel(name, msg));
         }
 
         /// <summary>
         ///     Return the string required to create a web page label.
         /// </summary>
-        protected string FormLabel(string name, string message = "", bool visible = true)
+        protected static string FormLabel(string name, string message = "", bool visible = true)
         {
             string content;
             if (visible)
-                content = message + "<input id='" + name + "' Name='" + name + "' Type='hidden'>";
+            {
+                content = $"{message}<input id=\'{name}\' Name=\'{name}\' Type=\'hidden\'>";
+            }
             else
-                content = "<input id='" + name + "' Name='" + name + "' Type='hidden' value='" + message + "'>";
+            {
+                content = $"<input id=\'{name}\' Name=\'{name}\' Type=\'hidden\' value=\'{message}\'>";
+            }
             return content;
         }
 
@@ -135,9 +144,9 @@ namespace Hspi
         /// <param name="name">The name used to create the references for the text box.</param>
         /// <param name="allowEdit">if set to <c>true</c> allow the text to be edited.</param>
         /// <returns>The text to insert in the web page to create the text box.</returns>
-        protected string BuildTextBox(string name, string text = "", bool allowEdit = true)
+        protected static string BuildTextBox(string name, string text = "", bool allowEdit = true)
         {
-            return "<div id='" + name + "_div'>" + HtmlTextBox(name, text, 20, allowEdit) + "</div>";
+            return $"<div id=\'{name}_div\'>{HtmlTextBox(name, text, 20, allowEdit)}</div>";
         }
 
         /// <summary>
@@ -148,16 +157,16 @@ namespace Hspi
         /// <param name="allowEdit">if set to <c>true</c> allow the text to be edited.</param>
         protected void UpdateTextBox(string name, string text = "", bool allowEdit = true)
         {
-            divToUpdate.Add(name + "_div", HtmlTextBox(name, text, 20, allowEdit));
+            divToUpdate.Add($"{name}_div", HtmlTextBox(name, text, 20, allowEdit));
         }
 
         /// <summary>
         ///     Return the string required to create a web page text box.
         /// </summary>
-        protected string HtmlTextBox(string name, string defaultText, int size, bool allowEdit = true)
+        protected static string HtmlTextBox(string name, string defaultText, int size, bool allowEdit = true)
         {
-            var style = "";
-            var sReadOnly = "";
+            var style = string.Empty;
+            var sReadOnly = string.Empty;
 
             if (!allowEdit)
             {
@@ -165,45 +174,43 @@ namespace Hspi
                 sReadOnly = "readonly='readonly'";
             }
 
-            return "<input type='text' id='o" + name + "' style='" + style + "' size='" + size + "' name='" + name +
-                   "' " + sReadOnly + " value='" + defaultText + "'>";
+            return
+                $"<input type=\'text\' id=\'o{name}\' style=\'{style}\' size=\'{size}\' name=\'{name}\' {sReadOnly} value=\'{defaultText}\'>";
         }
 
         /// <summary>
         ///     Build a check box for a web page.
         /// </summary>
         /// <param name="name">The name used to create the references for the text box.</param>
-        /// <param name="Checked">if set to <c>true</c> [checked].</param>
-        /// <param name="autoPostBack">if set to <c>true</c></param>
-        /// <param name="submitForm">if set to <c>true</c></param>
+        /// <param name="checked">if set to <c>true</c> [checked].</param>
         /// <returns>The text to insert in the web page to create the check box.</returns>
-        protected string BuildCheckBox(string name, bool Checked = false, bool autoPostBack = true, bool submitForm = true)
+        protected string BuildCheckBox(string name, bool @checked = false)
         {
-            return "<div id='" + name + "_div'>" + FormCheckBox(name, Checked, autoPostBack, submitForm) + "</div>";
+            return $"<div id=\'{name}_div\'>{FormCheckBox(name, @checked)}</div>";
         }
 
         /// <summary>
         ///     Update a check box on a web page that was created with a DIV tag.
         /// </summary>
         /// <param name="name">The name used to create the references for the text box.</param>
-        /// <param name="Checked">if set to <c>true</c> [checked].</param>
-        /// <param name="autoPostBack">if set to <c>true</c></param>
-        /// <param name="submitForm">if set to <c>true</c></param>
-        protected void UpdateCheckBox(string name, bool Checked = false, bool autoPostBack = true, bool submitForm = true)
+        /// <param name="checked">if set to <c>true</c> [checked].</param>
+        protected void UpdateCheckBox(string name, bool @checked = false)
         {
-            divToUpdate.Add(name + "_div", FormCheckBox(name, Checked, autoPostBack, submitForm));
+            divToUpdate.Add($"{name}_div", FormCheckBox(name, @checked));
         }
 
         /// <summary>
         ///     Return the string required to create a web page check box.
         /// </summary>
-        protected string FormCheckBox(string name, bool Checked = false, bool autoPostBack = true,
+        protected string FormCheckBox(string name,
+            bool @checked = false,
+            bool autoPostBack = true,
             bool submitForm = true)
         {
-            var cb = new clsJQuery.jqCheckBox(name, "", PageName, autoPostBack, submitForm)
+            var cb = new clsJQuery.jqCheckBox(name, string.Empty, PageName, autoPostBack, submitForm)
             {
-                id = "o" + name,
-                @checked = Checked
+                id = $"o{name}",
+                @checked = @checked
             };
             return cb.Build();
         }
@@ -218,11 +225,14 @@ namespace Hspi
         /// <param name="width">Width of the list box</param>
         /// <param name="enabled">if set to <c>true</c> [enabled].  Doesn't seem to work.</param>
         /// <returns>The text to insert in the web page to create the list box.</returns>
-        protected string BuildListBox(string name, ref NameValueCollection options, int selected = -1,
-            string selectedValue = "", int width = 150, bool enabled = true)
+        protected string BuildListBox(string name,
+            NameValueCollection options,
+            int selected = -1,
+            string selectedValue = "",
+            int width = 150,
+            bool enabled = true)
         {
-            return "<div id='" + name + "_div'>" +
-                   FormListBox(name, ref options, selected, selectedValue, width, enabled) + "</div>";
+            return $"<div id=\'{name}_div\'>{FormListBox(name, options, selected, selectedValue, width, enabled)}</div>";
         }
 
         /// <summary>
@@ -234,23 +244,31 @@ namespace Hspi
         /// <param name="selectedValue">Name of the value to be selected.</param>
         /// <param name="width">Width of the list box</param>
         /// <param name="enabled">if set to <c>true</c> [enabled].  Doesn't seem to work.</param>
-        protected void UpdateListBox(string name, ref NameValueCollection options, int selected = -1,
-            string selectedValue = "", int width = 150, bool enabled = true)
+        protected void UpdateListBox(string name,
+            NameValueCollection options,
+            int selected = -1,
+            string selectedValue = "",
+            int width = 150,
+            bool enabled = true)
         {
-            divToUpdate.Add(name + "_div", FormListBox(name, ref options, selected, selectedValue, width, enabled));
+            divToUpdate.Add($"{name}_div", FormListBox(name, options, selected, selectedValue, width, enabled));
         }
 
         /// <summary>
         ///     Return the string required to create a web page list box.
         /// </summary>
-        protected string FormListBox(string name, ref NameValueCollection options, int selected = -1,
-            string selectedValue = "", int width = 150, bool enabled = true)
+        protected string FormListBox(string name,
+            NameValueCollection options,
+            int selected = -1,
+            string selectedValue = "",
+            int width = 150,
+            bool enabled = true)
         {
             var lb = new clsJQuery.jqListBox(name, PageName);
 
             lb.items.Clear();
-            lb.id = "o" + name;
-            lb.style = "width: " + width + "px;";
+            lb.id = $"o{name}";
+            lb.style = $"width: {width}px;";
             lb.enabled = enabled;
 
             if (options != null)
@@ -258,28 +276,35 @@ namespace Hspi
                 for (var i = 0; i < options.Count; i++)
                 {
                     if (selected == -1 && selectedValue == options.GetKey(i))
+                    {
                         selected = i;
+                    }
                     lb.items.Add(options.GetKey(i));
                 }
+
                 if (selected >= 0)
+                {
                     lb.SelectedValue = options.GetKey(selected);
+                }
             }
 
             return lb.Build();
         }
 
         /// <summary>
-        /// Build a drop list for a web page.
+        ///     Build a drop list for a web page.
         /// </summary>
-        /// <param name="Name">The name used to create the references for the list box.</param>
-        /// <param name="Options">Data value pairs used to populate the list box.</param>
-        /// <param name="Selected">Index of the item to be selected.</param>
-        /// <param name="SelectedValue">Name of the value to be selected.</param>
-        /// <param name="SubmitForm">if set to <c>true</c></param>
+        /// <param name="name">The name used to create the references for the list box.</param>
+        /// <param name="options">Data value pairs used to populate the list box.</param>
+        /// <param name="selected">Index of the item to be selected.</param>
+        /// <param name="selectedValue">Name of the value to be selected.</param>
         /// <returns>The text to insert in the web page to create the drop list.</returns>
-        protected string BuildDropList(string Name, ref NameValueCollection Options, int Selected = -1, bool SubmitForm = true, string SelectedValue = "")
+        protected string BuildDropList(string name,
+            NameValueCollection options,
+            int selected = -1,
+            string selectedValue = "")
         {
-            return "<div id='" + Name + "_div'>" + FormDropDown(Name, ref Options, Selected, submitForm: SubmitForm, selectedValue: SelectedValue) + "</div>";
+            return $"<div id=\'{name}_div\'>{FormDropDown(name, options, selected, selectedValue: selectedValue)}</div>";
         }
 
         /// <summary>
@@ -289,42 +314,54 @@ namespace Hspi
         /// <param name="options">Data value pairs used to populate the list box.</param>
         /// <param name="selected">Index of the item to be selected.</param>
         /// <param name="selectedValue">Name of the value to be selected.</param>
-        protected void UpdateDropList(string name, ref NameValueCollection options, int selected = -1,
+        protected void UpdateDropList(string name,
+            NameValueCollection options,
+            int selected = -1,
             string selectedValue = "")
         {
-            divToUpdate.Add(name + "_div", FormDropDown(name, ref options, selected, selectedValue: selectedValue));
+            divToUpdate.Add($"{name}_div", FormDropDown(name, options, selected, selectedValue: selectedValue));
         }
 
         /// <summary>
         ///     Return the string required to create a web page drop list.
         /// </summary>
-        protected string FormDropDown(string name, ref NameValueCollection options, int selected, int width = 150,
-            bool submitForm = true, bool addBlankRow = false,
-            bool autoPostback = true, string tooltip = "", bool enabled = true, string ddMsg = "",
+        protected string FormDropDown(string name,
+            NameValueCollection options,
+            int selected,
+            int width = 150,
+            bool submitForm = true,
+            bool addBlankRow = false,
+            bool autoPostback = true,
+            string tooltip = "",
+            bool enabled = true,
+            string ddMsg = "",
             string selectedValue = "")
         {
             var dd = new clsJQuery.jqDropList(name, PageName, submitForm)
             {
                 selectedItemIndex = -1,
-                id = "o" + name,
+                id = $"o{name}",
                 autoPostBack = autoPostback,
                 toolTip = tooltip,
-                style = "width: " + width + "px;",
+                style = $"width: {width}px;",
                 enabled = enabled
             };
 
-
             //Add a blank area to the top of the list
             if (addBlankRow)
-                dd.AddItem(ddMsg, "", false);
+            {
+                dd.AddItem(ddMsg, string.Empty, false);
+            }
 
             if (options != null)
+            {
                 for (var i = 0; i < options.Count; i++)
                 {
                     var sel = i == selected || options.Get(i) == selectedValue;
 
                     dd.AddItem(options.GetKey(i), options.Get(i), sel);
                 }
+            }
 
             return dd.Build();
         }

@@ -4,6 +4,7 @@ using HomeSeerAPI;
 using Hspi;
 
 //TODO: namespace $safeprojectname$
+
 namespace HSPIPluginA.Dev
 {
     // ReSharper disable once InconsistentNaming
@@ -59,24 +60,24 @@ namespace HSPIPluginA.Dev
             return false;
         }
 
-        public override void HSEvent(Enums.HSEvent eventType, object[] parms)
+        public override void HSEvent(Enums.HSEvent eventType, object[] parameters)
         {
         }
 
         public override string InitIO(string port)
         {
             // debug
-            Hs.WriteLog(Name, "Entering InitIO");
+            HS.WriteLog(Name, "Entering InitIO");
 
             // initialise everything here, return a blank string only if successful, or an error message
 
 
             // debug
-            Hs.WriteLog(Name, "Completed InitIO");
+            HS.WriteLog(Name, "Completed InitIO");
             return "";
         }
 
-        public override IPlugInAPI.PollResultInfo PollDevice(int dvref)
+        public override IPlugInAPI.PollResultInfo PollDevice(int deviceId)
         {
             // return the value of a device on demand
 
@@ -95,7 +96,7 @@ namespace HSPIPluginA.Dev
         public override void ShutdownIO()
         {
             // debug
-            Hs.WriteLog(Name, "Entering ShutdownIO");
+            HS.WriteLog(Name, "Entering ShutdownIO");
 
             // shut everything down here
 
@@ -104,7 +105,7 @@ namespace HSPIPluginA.Dev
             Shutdown = true;
 
             // debug
-            Hs.WriteLog(Name, "Completed ShutdownIO");
+            HS.WriteLog(Name, "Completed ShutdownIO");
         }
 
         public override SearchReturn[] Search(string searchString, bool regEx)
@@ -112,12 +113,12 @@ namespace HSPIPluginA.Dev
             return null;
         }
 
-        public override string ActionBuildUI(string sUnique, IPlugInAPI.strTrigActInfo actInfo)
+        public override string ActionBuildUI(string uniqueControlId, IPlugInAPI.strTrigActInfo actionInfo)
         {
             return "";
         }
 
-        public override bool ActionConfigured(IPlugInAPI.strTrigActInfo actInfo)
+        public override bool ActionConfigured(IPlugInAPI.strTrigActInfo actionInfo)
         {
             return true;
         }
@@ -127,18 +128,18 @@ namespace HSPIPluginA.Dev
             return 0;
         }
 
-        public override string ActionFormatUI(IPlugInAPI.strTrigActInfo actInfo)
+        public override string ActionFormatUI(IPlugInAPI.strTrigActInfo actionInfo)
         {
             return "";
         }
 
         public override IPlugInAPI.strMultiReturn ActionProcessPostUI(NameValueCollection postData,
-            IPlugInAPI.strTrigActInfo trigInfoIn)
+            IPlugInAPI.strTrigActInfo actionInfo)
         {
             return new IPlugInAPI.strMultiReturn();
         }
 
-        public override bool ActionReferencesDevice(IPlugInAPI.strTrigActInfo actInfo, int dvRef)
+        public override bool ActionReferencesDevice(IPlugInAPI.strTrigActInfo actionInfo, int deviceId)
         {
             return false;
         }
@@ -148,7 +149,7 @@ namespace HSPIPluginA.Dev
             return "";
         }
 
-        public override bool get_Condition(IPlugInAPI.strTrigActInfo trigInfo)
+        public override bool get_Condition(IPlugInAPI.strTrigActInfo actionInfo)
         {
             return false;
         }
@@ -158,28 +159,28 @@ namespace HSPIPluginA.Dev
             return false;
         }
 
-        public override string TriggerBuildUI(string sUnique, IPlugInAPI.strTrigActInfo trigInfo)
+        public override string TriggerBuildUI(string uniqueControlId, IPlugInAPI.strTrigActInfo triggerInfo)
         {
             return "";
         }
 
-        public override string TriggerFormatUI(IPlugInAPI.strTrigActInfo trigInfo)
+        public override string TriggerFormatUI(IPlugInAPI.strTrigActInfo actionInfo)
         {
             return "";
         }
 
         public override IPlugInAPI.strMultiReturn TriggerProcessPostUI(NameValueCollection postData,
-            IPlugInAPI.strTrigActInfo trigInfoIn)
+            IPlugInAPI.strTrigActInfo actionInfo)
         {
             return new IPlugInAPI.strMultiReturn();
         }
 
-        public override bool TriggerReferencesDevice(IPlugInAPI.strTrigActInfo trigInfo, int dvRef)
+        public override bool TriggerReferencesDevice(IPlugInAPI.strTrigActInfo actionInfo, int deviceId)
         {
             return false;
         }
 
-        public override bool TriggerTrue(IPlugInAPI.strTrigActInfo trigInfo)
+        public override bool TriggerTrue(IPlugInAPI.strTrigActInfo actionInfo)
         {
             return false;
         }
@@ -194,7 +195,7 @@ namespace HSPIPluginA.Dev
             return "";
         }
 
-        public override bool get_TriggerConfigured(IPlugInAPI.strTrigActInfo trigInfo)
+        public override bool get_TriggerConfigured(IPlugInAPI.strTrigActInfo actionInfo)
         {
             return true;
         }
@@ -204,16 +205,16 @@ namespace HSPIPluginA.Dev
             return "";
         }
 
-        public override bool HandleAction(IPlugInAPI.strTrigActInfo actInfo)
+        public override bool HandleAction(IPlugInAPI.strTrigActInfo actionInfo)
         {
             return false;
         }
 
-        public override void set_Condition(IPlugInAPI.strTrigActInfo trigInfo, bool value)
+        public override void set_Condition(IPlugInAPI.strTrigActInfo actionInfo, bool value)
         {
         }
 
-        public override void SpeakIn(int device, string txt, bool w, string host)
+        public override void SpeakIn(int deviceId, string txt, bool w, string host)
         {
         }
 
@@ -237,27 +238,27 @@ namespace HSPIPluginA.Dev
             return "";
         }
 
-        public override string ConfigDevice(int @ref, string user, int userRights, bool newDevice)
+        public override string ConfigDevice(int deviceId, string user, int userRights, bool newDevice)
         {
             return "";
         }
 
-        public override Enums.ConfigDevicePostReturn ConfigDevicePost(int @ref, string data, string user, int userRights)
+        public override Enums.ConfigDevicePostReturn ConfigDevicePost(int deviceId, string data, string user, int userRights)
         {
             return Enums.ConfigDevicePostReturn.DoneAndCancel;
         }
 
-        public override object PluginFunction(string procName, object[] parms)
+        public override object PluginFunction(string functionName, object[] parameters)
         {
             return null;
         }
 
-        public override object PluginPropertyGet(string procName, object[] parms)
+        public override object PluginPropertyGet(string propertyName, object[] parameters)
         {
             return null;
         }
 
-        public override void PluginPropertySet(string procName, object value)
+        public override void PluginPropertySet(string propertyName, object value)
         {
         }
 
@@ -282,9 +283,8 @@ namespace HSPIPluginA.Dev
             return true;
         }
 
-        public override void SetDeviceValue(int refId, double value, bool trigger = true)
+        public override void SetDeviceValue(int deviceId, double value, bool trigger = true)
         {
-            
         }
     }
 }

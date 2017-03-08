@@ -1,0 +1,6 @@
+{
+    "vsicons.presets.angular": false,
+    "restructuredtext.builtDocumentationPath": "docs/build/html",
+    "restructuredtext.makefilePath": "docs",
+    "restructuredtext.updateOnTextChanged": "true"
+}

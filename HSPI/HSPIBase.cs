@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics.CodeAnalysis;
 using HomeSeerAPI;
+using Hspi.Exceptions;
 using HSCF.Communication.Scs.Communication;
 using HSCF.Communication.Scs.Communication.EndPoints.Tcp;
 using HSCF.Communication.ScsServices.Client;
@@ -11,14 +13,20 @@ namespace Hspi
     // ReSharper disable once InconsistentNaming
     public abstract class HspiBase : IPlugInAPI
     {
-        protected IAppCallbackAPI Callback;
-        protected IScsServiceClient<IAppCallbackAPI> CallbackClient;
-        protected IHSApplication Hs;
-        protected IScsServiceClient<IHSApplication> HsClient;
-        public bool Shutdown;
+        protected IAppCallbackAPI Callback { get; set; }
+
+        protected IScsServiceClient<IAppCallbackAPI> CallbackClient { get; set; }
+
+        protected IHSApplication HS { get; set; }
+
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "Hs",
+            Justification = "R# doesn't like MS's standard.")]
+        protected IScsServiceClient<IHSApplication> HsClient { get; set; }
+
+        public bool Shutdown { get; set; }
 
         /// <summary>
-        ///     Test our SCS client connection: <see cref="HSPI" /> is connected.
+        ///     Test our SCS client connection: <see cref="Hspi" /> is connected.
         ///     The console wrapper will call this periodically to check if there is a problem.
         /// </summary>
         /// <value><c>true</c> if connected; otherwise, <c>false</c>.</value>
@@ -84,7 +92,9 @@ namespace Hspi
         ///     call the RegisterEventCB procedure and provide it with event you wish to monitor.
         ///     See RegisterEventCB for more information and an example and event types.
         /// </summary>
-        public abstract void HSEvent(Enums.HSEvent eventType, object[] parms);
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "1#")]
+        public abstract void HSEvent(Enums.HSEvent eventType, object[] parameters);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -149,9 +159,10 @@ namespace Hspi
         ///     This request is normally done when a user displays the status page, or a script runs and needs to be sure it has
         ///     the latest status.
         /// </summary>
-        /// <param name="dvref">Reference Id for the device</param>
+        /// <param name="deviceId">Reference Id for the device</param>
         /// <returns>IPlugInAPI.PollResultInfo</returns>
-        public abstract IPlugInAPI.PollResultInfo PollDevice(int dvref);
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        public abstract IPlugInAPI.PollResultInfo PollDevice(int deviceId);
 
         /// <summary>
         ///     Indicate if the plugin allows for configuration of the devices via the device utility page.
@@ -165,12 +176,16 @@ namespace Hspi
         /// <summary>
         ///     This function is called when a user posts information from your plugin tab on the device utility page.
         /// </summary>
-        /// <param name="ref">The device reference id.</param>
+        /// <param name="deviceId">The device reference id.</param>
         /// <param name="data">The post data.</param>
         /// <param name="user">The name of logged in user.</param>
         /// <param name="userRights">The rights of the logged in user.</param>
         /// <returns>Enums.ConfigDevicePostReturn.</returns>
-        public abstract Enums.ConfigDevicePostReturn ConfigDevicePost(int @ref, string data, string user, int userRights);
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        public abstract Enums.ConfigDevicePostReturn ConfigDevicePost(int deviceId,
+            string data,
+            string user,
+            int userRights);
 
         /// <summary>
         ///     If SupportsConfigDevice returns <c>true</c>, this function will be called when the device properties are displayed
@@ -183,7 +198,7 @@ namespace Hspi
         ///     Normally this would be any jquery controls that allow customization of the device.
         ///     The returned HTML is just an HTML fragment and not a complete page.
         /// </summary>
-        /// <param name="ref">The device reference id.</param>
+        /// <param name="deviceId">The device reference id.</param>
         /// <param name="user">The name of logged in user.</param>
         /// <param name="userRights">The rights of the logged in user.</param>
         /// <param name="newDevice">
@@ -192,7 +207,8 @@ namespace Hspi
         ///     existing device.
         /// </param>
         /// <returns>A string containing HTML to be displayed. Return an empty string if there is not configuration needed.</returns>
-        public abstract string ConfigDevice(int @ref, string user, int userRights, bool newDevice);
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        public abstract string ConfigDevice(int deviceId, string user, int userRights, bool newDevice);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>
@@ -205,23 +221,30 @@ namespace Hspi
         /// <param name="searchString">The search string.</param>
         /// <param name="regEx">if set to <c>true</c> then the search string is a regular expression.</param>
         /// <returns>Array of SearchReturn items describing what was found and where it was found.</returns>
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "1#")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
         public abstract SearchReturn[] Search(string searchString, bool regEx);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary> Call a function in the plugin. </summary>
-        /// <param name="procName">The name of the function to call.</param>
-        /// <param name="parms">An array of parameters to pass to the function.</param>
-        public abstract object PluginFunction(string procName, object[] parms);
+        /// <param name="functionName">The name of the function to call.</param>
+        /// <param name="parameters">An array of parameters to pass to the function.</param>
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "1#")]
+        public abstract object PluginFunction(string functionName, object[] parameters);
 
         /// <summary> Get a property from the plugin. </summary>
-        /// <param name="procName">The name of the property to access.</param>
-        /// <param name="parms">An array of parameters to pass to the function.</param>
-        public abstract object PluginPropertyGet(string procName, object[] parms);
+        /// <param name="propertyName">The name of the property to access.</param>
+        /// <param name="parameters">An array of parameters to pass to the function.</param>
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "1#")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        public abstract object PluginPropertyGet(string propertyName, object[] parameters);
 
         /// <summary> Set a property of the plugin. </summary>
-        /// <param name="procName">The name of the property to access.</param>
+        /// <param name="propertyName">The name of the property to access.</param>
         /// <param name="value">The value to set the property.</param>
-        public abstract void PluginPropertySet(string procName, object value);
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        public abstract void PluginPropertySet(string propertyName, object value);
 
         /// <summary>
         ///     If your plugin is registered as a Speak proxy plugin, then when HomeSeer is asked to speak something,
@@ -231,7 +254,7 @@ namespace Hspi
         ///     It may be necessary or a feature of your plugin to modify the text being spoken or the host/instance list provided
         ///     in the host parameter - this is acceptable.
         /// </summary>
-        /// <param name="device">This is the device that is to be used for the speaking.</param>
+        /// <param name="deviceId">This is the device that is to be used for the speaking.</param>
         /// <param name="text">
         ///     This is the text to be spoken, or if it is a WAV file to be played, then the characters ":\" will be
         ///     found starting at position 2 of the string as playing a WAV file with the speak command in HomeSeer REQUIRES a
@@ -246,7 +269,10 @@ namespace Hspi
         ///     asterisk (*) indicates all connected speaker clients on all hosts.  Normally this parameter is passed to SpeakProxy
         ///     unchanged.
         /// </param>
-        public abstract void SpeakIn(int device, string text, bool wait, string host);
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "1#")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "2#")]
+        public abstract void SpeakIn(int deviceId, string text, bool wait, string host);
 
         /// <summary> The number of actions the plugin supports. </summary>
         public abstract int ActionCount();
@@ -256,61 +282,75 @@ namespace Hspi
         ///     There may be times when a user can select invalid selections for the action and in this case you would return FALSE
         ///     so HomeSeer will not allow the action to be saved.
         /// </summary>
-        /// <param name="actInfo">Object describing the action.</param>
-        public abstract bool ActionConfigured(IPlugInAPI.strTrigActInfo actInfo);
+        /// <param name="actionInfo">Object describing the action.</param>
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        public abstract bool ActionConfigured(IPlugInAPI.strTrigActInfo actionInfo);
 
         /// <summary>
         ///     This function is called from the HomeSeer event page when an event is in edit mode.
         ///     Your plugin needs to return HTML controls so the user can make action selections.
         ///     Normally this is one of the HomeSeer jquery controls such as a clsJquery.jqueryCheckbox.
         /// </summary>
-        /// <param name="sUnique">
+        /// <param name="uniqueControlId">
         ///     A unique string that can be used with your HTML controls to identify the control. All controls
         ///     need to have a unique ID.
         /// </param>
-        /// <param name="actInfo">Object that contains information about the action like current selections.</param>
+        /// <param name="actionInfo">Object that contains information about the action like current selections.</param>
         /// <returns>HTML controls that need to be displayed so the user can select the action parameters.</returns>
-        public abstract string ActionBuildUI(string sUnique, IPlugInAPI.strTrigActInfo actInfo);
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "1#")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        public abstract string ActionBuildUI(string uniqueControlId, IPlugInAPI.strTrigActInfo actionInfo);
 
         /// <summary>
         ///     When a user edits your event actions in the HomeSeer events, this function is called to process the selections.
         /// </summary>
         /// <param name="postData">A collection of name value pairs that include the user's selections.</param>
-        /// <param name="trigInfoIn">Object that contains information about the action.</param>
+        /// <param name="actionInfo">Object that contains information about the action.</param>
         /// <returns>
         ///     Object that holds the parsed information for the action. HomeSeer will save this information for you in the
         ///     database.
         /// </returns>
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "1#")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
         public abstract IPlugInAPI.strMultiReturn ActionProcessPostUI(NameValueCollection postData,
-            IPlugInAPI.strTrigActInfo trigInfoIn);
+            IPlugInAPI.strTrigActInfo actionInfo);
 
-        public abstract string ActionFormatUI(IPlugInAPI.strTrigActInfo actInfo);
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        public abstract string ActionFormatUI(IPlugInAPI.strTrigActInfo actionInfo);
 
         /// <summary> Indicate if the given devices is referenced by the given action. </summary>
-        public abstract bool ActionReferencesDevice(IPlugInAPI.strTrigActInfo actInfo, int dvRef);
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "1#")]
+        public abstract bool ActionReferencesDevice(IPlugInAPI.strTrigActInfo actionInfo, int deviceId);
 
         /// <summary>
         ///     When an event is triggered, this function is called to carry out the selected action.
         ///     Use the ActInfo parameter to determine what action needs to be executed then execute this action.
         /// </summary>
-        public abstract bool HandleAction(IPlugInAPI.strTrigActInfo actInfo);
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        public abstract bool HandleAction(IPlugInAPI.strTrigActInfo actionInfo);
 
         /// <summary> Return the HTML controls for a given trigger. </summary>
-        public abstract string TriggerBuildUI(string sUnique, IPlugInAPI.strTrigActInfo trigInfo);
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "1#")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        public abstract string TriggerBuildUI(string uniqueControlId, IPlugInAPI.strTrigActInfo triggerInfo);
 
         /// <summary>
         ///     Process a post from the events web page when a user modifies any of the controls related to a plugin trigger.
         ///     After processing the user selctions, create and return a strMultiReturn object.
         /// </summary>
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "1#")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
         public abstract IPlugInAPI.strMultiReturn TriggerProcessPostUI(NameValueCollection postData,
-            IPlugInAPI.strTrigActInfo trigInfoIn);
+            IPlugInAPI.strTrigActInfo actionInfo);
 
         /// <summary>
         ///     After the trigger has been configured, this function is called in your plugin to display the configured
         ///     trigger.
         /// </summary>
         /// <returns>Text that describes the given trigger.</returns>
-        public abstract string TriggerFormatUI(IPlugInAPI.strTrigActInfo trigInfo);
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        public abstract string TriggerFormatUI(IPlugInAPI.strTrigActInfo actionInfo);
 
         /// <summary>
         ///     Although this appears as a function that would be called to determine if a trigger is true or not, it is not.
@@ -322,10 +362,13 @@ namespace Hspi
         ///     so there is not regularity with which this function may be called in your plugin.
         ///     It may be called as often as once per second or as infrequently as once in a blue moon.
         /// </summary>
-        public abstract bool TriggerTrue(IPlugInAPI.strTrigActInfo trigInfo);
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        public abstract bool TriggerTrue(IPlugInAPI.strTrigActInfo actionInfo);
 
         /// <summary> Indicate if the given device is referenced by the given trigger. </summary>
-        public abstract bool TriggerReferencesDevice(IPlugInAPI.strTrigActInfo trigInfo, int dvRef);
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "1#")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
+        public abstract bool TriggerReferencesDevice(IPlugInAPI.strTrigActInfo actionInfo, int deviceId);
 
         /// <summary>
         ///     A complete page needs to be created and returned.
@@ -363,6 +406,7 @@ namespace Hspi
         public abstract bool get_HasConditions(int triggerNumber);
 
         public bool HasTriggers => GetHasTriggers();
+
         public int TriggerCount => GetTriggerCount();
 
         /// <summary>
@@ -383,16 +427,16 @@ namespace Hspi
         public abstract string get_SubTriggerName(int triggerNumber, int subTriggerNumber);
 
         /// <summary> Indicate if the given trigger is configured properly. </summary>
-        public abstract bool get_TriggerConfigured(IPlugInAPI.strTrigActInfo trigInfo);
+        public abstract bool get_TriggerConfigured(IPlugInAPI.strTrigActInfo actionInfo);
 
         /// <summary>
         ///     Set to <c>true</c> if the trigger is being used as a CONDITION.
         ///     Check this value in BuildUI and other procedures to change how the trigger is rendered if it is being used as a
         ///     condition or a trigger.
         /// </summary>
-        public abstract bool get_Condition(IPlugInAPI.strTrigActInfo trigInfo);
+        public abstract bool get_Condition(IPlugInAPI.strTrigActInfo actionInfo);
 
-        public abstract void set_Condition(IPlugInAPI.strTrigActInfo trigInfo, bool value);
+        public abstract void set_Condition(IPlugInAPI.strTrigActInfo actionInfo, bool value);
 
         /// <summary> Indicate if the plugin has any triggers. </summary>
         protected abstract bool GetHasTriggers();
@@ -404,6 +448,8 @@ namespace Hspi
         /// <summary> Get the name of this plugin </summary>
         protected abstract string GetName();
 
+        [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "apiVersion",
+            Justification = "This is what the old HS sample does, soooooo... ")]
         public void Connect(string serverAddress, int serverPort)
         {
             // This method is called by our console wrapper at launch time
@@ -416,13 +462,14 @@ namespace Hspi
                     ScsServiceClientBuilder.CreateClient<IHSApplication>(new ScsTcpEndPoint(serverAddress, serverPort),
                         this);
                 HsClient.Connect();
-                Hs = HsClient.ServiceProxy;
+                HS = HsClient.ServiceProxy;
+
                 // ReSharper disable once UnusedVariable
-                var apiVersion = Hs.APIVersion; // just to make sure our connection is valid
+                var apiVersion = HS.APIVersion; // just to make sure our connection is valid
             }
             catch (Exception ex)
             {
-                throw new Exception("Error connecting homeseer SCS client: " + ex.Message, ex);
+                throw new HspiConnectionException($"Error connecting homeseer SCS client: {ex.Message}", ex);
             }
 
             // part 2 - callback object Proxy
@@ -433,22 +480,23 @@ namespace Hspi
                         new ScsTcpEndPoint(serverAddress, serverPort), this);
                 CallbackClient.Connect();
                 Callback = CallbackClient.ServiceProxy;
+
                 // ReSharper disable once UnusedVariable
                 var apiVersion = Callback.APIVersion; // just to make sure our connection is valid
             }
             catch (Exception ex)
             {
-                throw new Exception("Error connecting callback SCS client: " + ex.Message, ex);
+                throw new HspiConnectionException($"Error connecting callback SCS client: {ex.Message}", ex);
             }
 
             // Establish the reverse connection from homeseer back to our plugin
             try
             {
-                Hs.Connect(Name, InstanceFriendlyName());
+                HS.Connect(Name, InstanceFriendlyName());
             }
             catch (Exception ex)
             {
-                throw new Exception("Error connecting homeseer to our plugin: " + ex.Message, ex);
+                throw new HspiConnectionException($"Error connecting homeseer to our plugin: {ex.Message}", ex);
             }
         }
 
@@ -459,9 +507,9 @@ namespace Hspi
         /// <summary>
         ///     Sets the device value.
         /// </summary>
-        /// <param name="refId">The device reference identifier.</param>
+        /// <param name="deviceId">The device reference identifier.</param>
         /// <param name="value">The value/status of the device.</param>
         /// <param name="trigger">if set to <c>true</c> process triggers normally, otherwise only change the value.</param>
-        public abstract void SetDeviceValue(int refId, double value, bool trigger = true);
+        public abstract void SetDeviceValue(int deviceId, double value, bool trigger = true);
     }
 }

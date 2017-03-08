@@ -5,7 +5,7 @@ namespace Hspi
 {
     public class Options
     {
-        [Option('p', "port", HelpText = "HomeSeer admin port", DefaultValue = 10400) ]
+        [Option('p', "port", HelpText = "HomeSeer admin port", DefaultValue = 10400)]
         public int Port { get; set; } = 10400;
 
         [Option('s', "server", HelpText = "HomeSeer IP address", DefaultValue = "127.0.0.1")]
@@ -17,8 +17,7 @@ namespace Hspi
         [HelpOption]
         public string GetUsage()
         {
-            return HelpText.AutoBuild(this,
-              current => HelpText.DefaultParsingErrorsHandler(this, current));
+            return HelpText.AutoBuild(this, current => HelpText.DefaultParsingErrorsHandler(this, current));
         }
     }
 }
