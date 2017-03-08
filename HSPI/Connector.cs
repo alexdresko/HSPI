@@ -4,8 +4,10 @@ using CommandLine;
 
 namespace Hspi
 {
-    public class Connector
+    public static class Connector
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1004:GenericMethodsShouldProvideTypeParameter", Justification = "The function wouldn't do anything without a plugin.")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "I don't know what kinds of exceptions it _could_ throw.")]
         public static void Connect<TPlugin>(string[] args) where TPlugin : HspiBase, new()
         {
             var options = new Options();

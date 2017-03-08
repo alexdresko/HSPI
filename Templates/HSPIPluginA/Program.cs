@@ -1,6 +1,7 @@
 using Hspi;
 
 namespace $safeprojectname$
+namespace HSPIPluginA.Dev
 {
     internal class Program
     {

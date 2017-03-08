@@ -27,3 +27,4 @@ Until we have awesome names for the templates, you’ll have to use this key to 
 The framework
 -------------
 
+* All C# builds in HSPI are validated against a fairly strict set of static code analysis rules in an effort to automate code quality checks. 

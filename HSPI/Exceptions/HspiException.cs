@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 
 namespace Hspi.Exceptions
 {
-    public class HspiException : ApplicationException
+    [Serializable]
+    public class HspiException : Exception
     {
         public HspiException()
         {
