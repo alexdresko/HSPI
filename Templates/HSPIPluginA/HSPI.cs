@@ -4,7 +4,7 @@ using HomeSeerAPI;
 using Hspi;
 
 namespace $safeprojectname$
-namespace HSPIPluginA.Dev
+
 {
     // ReSharper disable once InconsistentNaming
     public class HSPI : HspiBase
@@ -274,6 +274,7 @@ namespace HSPIPluginA.Dev
         protected override string GetName()
         {
             return "$projectname$";
+
         }
 
         protected override bool GetHscomPort()
