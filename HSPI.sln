@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSPI", "HSPI\HSPI.csproj", "{5A16BE5F-4498-4AF1-9C59-3DB79662EBD7}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C3AF5F1F-6760-4728-B04D-753404501E48}"
 	ProjectSection(SolutionItems) = preProject
 		copy-devtotemplate.ps1 = copy-devtotemplate.ps1
@@ -16,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{85A80E33-7B0C-4913-A709-F98A7F32829A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSPI", "HSPI\HSPI.csproj", "{5A16BE5F-4498-4AF1-9C59-3DB79662EBD7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeSeerTemplates", "Templates\HomeSeerTemplates\HomeSeerTemplates.csproj", "{B2550542-2064-4520-B79F-9A3685D6A0CE}"
 EndProject
