@@ -42,5 +42,6 @@
         <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="HSPIPluginB"
                d:TargetPath="|HSPIPluginB;TemplateProjectOutputGroup|" Path="ProjectTemplates"
                d:VsixSubPath="ProjectTemplates" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="HspiSampleBasic" d:TargetPath="|HspiSampleBasic;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
     </Assets>
 </PackageManifest>

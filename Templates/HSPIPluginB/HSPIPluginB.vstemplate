@@ -4,7 +4,7 @@
             xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
     <TemplateData>
         <Name>HSPIPluginB</Name>
-        <Description>HomeSeer HSPIPluginB project template</Description>
+        <Description>HomeSeer HSPIPluginB project template.  See http://hspi.readthedocs.io/en/latest/features.html#the-templates for more information.</Description>
         <Icon>HS-Button_400x400.ico</Icon>
         <ProjectType>CSharp</ProjectType>
         <ProjectSubType>HomeSeer</ProjectSubType>
@@ -20,7 +20,7 @@
         <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
             <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
             <ProjectItem ReplaceParameters="true" OpenInEditor="true">HSPI.cs</ProjectItem>
-            <ProjectItem ReplaceParameters="true" OpenInEditor="true">Program.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" OpenInEditor="false">Program.cs</ProjectItem>
             <ProjectItem ReplaceParameters="false" OpenInEditor="false">App.config</ProjectItem>
         </Project>
     </TemplateContent>
