@@ -4,7 +4,7 @@
             xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
     <TemplateData>
         <Name>HSPIPluginA</Name>
-        <Description>HomeSeer HSPIPluginA project template</Description>
+        <Description>HomeSeer HSPIPluginA project template. See http://hspi.readthedocs.io/en/latest/features.html#the-templates for more information.</Description>
         <Icon>HS-Button_400x400.ico</Icon>
         <ProjectType>CSharp</ProjectType>
         <ProjectSubType>HomeSeer</ProjectSubType>
