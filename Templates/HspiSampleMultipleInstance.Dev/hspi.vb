@@ -269,7 +269,9 @@ Public Class HSPI
         End Set
         Get
 
+#Disable Warning BC42355 ' Property doesn't return a value on all code paths
         End Get
+#Enable Warning BC42355 ' Property doesn't return a value on all code paths
     End Property
 
     Public Function ActionBuildUI(ByVal sUnique As String, ByVal ActInfo As IPlugInAPI.strTrigActInfo) As String Implements HomeSeerAPI.IPlugInAPI.ActionBuildUI
@@ -862,7 +864,9 @@ Public Class HSPI
 
     Public Function Search(SearchString As String, RegEx As Boolean) As HomeSeerAPI.SearchReturn() Implements HomeSeerAPI.IPlugInAPI.Search
 
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
     End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
     Public Sub SpeakIn(device As Integer, txt As String, w As Boolean, host As String) Implements HomeSeerAPI.IPlugInAPI.SpeakIn
 
