@@ -1,15 +1,16 @@
 using Hspi;
 
-namespace $safeprojectname$
+//TODO: namespace $safeprojectname$
 
+namespace HSPIPluginB.Dev
 {
     // ReSharper disable once InconsistentNaming
     public class HSPI : HspiBase2
     {
         protected override string GetName()
         {
-            return "$projectname$";
-
+            //TODO: return "$projectname$";
+            return "HSPIPluginB.Dev";
         }
     }
 }

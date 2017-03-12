@@ -10,8 +10,13 @@ Contributers
 * 3/11/2017 10:27:59 AM by AD:   Switched to more of a gitflow (http://nvie.com/posts/a-successful-git-branching-model/) based branching strategy. The biggest reason for the switch is because I'm trying to make better use of the build system -- Basically, I don't want to continuously publish an updated nuget package and VSIX extension for every arbitrary change we make. Having a ``dev`` branch allows us to stage blocks of changes before merging ``dev`` into ``master``. It's the merging of ``dev`` into ``master`` that triggers the nuget & VSIX publishing, so you can see why merging directly into ``master`` often would be problematic. Maybe it's just me, but I think it's annoying with a nuget package or VS extension is being updated multiple times a day. 
 * 3/11/2017 10:28:05 AM by AD:   I closed out the "Good enough to use" milestone (https://github.com/alexdresko/HSPI/milestone/1) (because it is), and started "Definitive" https://github.com/alexdresko/HSPI/milestone/2
 
+Templates
+^^^^^^^^^
 
-3/11/2017
+* 3/11/2017 7:35:13 PM by AD: The original HomeSeer provided VB.NET templates are included in the VS extension! For the most part, they are completely unmodified. I simply included them in the extension as a reference. For most cases, you'll want to start with the custom HSPI templates that come with the extension. 
+* 3/11/2017 7:37:30 PM by AD:   The binary files created by the templates automatically conform to the standard HS plugin structure wherein the plugin's dependencies are in a subdirectory called ``bin/<plugin name>``. This directory structure enables plugins to avoid version conflicts with other plugins that depend on different versions of the same dependencies. Installing your plugin into HomeSeer is as simple as copying the entire output directory (``/bin/(debug|release)``) into your HomeSeer directory (typically ``C:\Program Files (x86)\HomeSeer HS3``). 
+
+3/10/2017
 ---------
 
 Extension

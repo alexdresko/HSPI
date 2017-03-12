@@ -12,7 +12,7 @@
     <ProjectGuid>{A7D38B6C-9F00-4D20-9D3F-30069E317421}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>HspiSampleBasic</RootNamespace>
-    <AssemblyName>HspiSampleBasic</AssemblyName>
+    <AssemblyName>HSPI_SampleBasic</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <OptionExplicit>On</OptionExplicit>
@@ -67,11 +67,18 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="classes.vb" />
+    <None Include="hspi.vb" />
+    <None Include="main.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <None Include="plugin.vb" />
+    <None Include="utils.vb" />
+    <None Include="web_config.vb" />
+    <None Include="web_status.vb" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="AssemblyInfo.vb" />
-    <None Include="Class1.vb" />
     <None Include="MyApplication.Designer.vb" />
     <None Include="MyApplication.myapp" />
     <None Include="HspiSampleBasic.ico" />
