@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="classes.vb" />
+    <None Include="fix-output.ps1" />
     <None Include="hspi.vb" />
     <None Include="main.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

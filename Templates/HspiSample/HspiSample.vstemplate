@@ -30,6 +30,7 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="WebTestPage.vb">WebTestPage.vb</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="WebUtil.vb">WebUtil.vb</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="app.config">app.config</ProjectItem>
+        <ProjectItem ReplaceParameters="false" OpenInEditor="false">fix-output.ps1</ProjectItem>
     </Project>
   </TemplateContent>
     <WizardExtension>

@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="fix-output.ps1" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -86,5 +87,4 @@
   <Target Name="AfterBuild">
     <Exec Command="powershell -file $(ProjectDir)fix-output.ps1 -configuration $(ConfigurationName) -executionpolicy Unrestricted -NonInteractive" />
   </Target>
-  
 </Project>

@@ -32,6 +32,7 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="utils.vb">utils.vb</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="web_config.vb">web_config.vb</ProjectItem>
             <ProjectItem ReplaceParameters="true" TargetFileName="web_status.vb">web_status.vb</ProjectItem>
+            <ProjectItem ReplaceParameters="false" OpenInEditor="false">fix-output.ps1</ProjectItem>
         </Project>
     </TemplateContent>
     <WizardExtension>

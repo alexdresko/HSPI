@@ -19,11 +19,11 @@ gci templates\*.dev -Directory | foreach {
     }
 }
 
-gci templates\all | % {
+gci templates\all -File | % {
     $file = $_.FullName
     $name = $_.Name
 
     gci templates -Directory | where { $_.Name -notmatch "All|HomeSeerTemplates"} | % { 
-        copy-item $file -Destination $_ -Force -Verbose
+        copy-item $file -Destination $_.FullName -Force -Verbose
     }
 }
