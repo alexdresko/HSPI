@@ -9,8 +9,8 @@
     </SchemaVersion>
     <ProjectGuid>{A3B6D762-301C-41C3-8C70-1924E89BA9A5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>HspiSampleTemplate.Dev.Main</StartupObject>
-    <RootNamespace>HspiSampleTemplate.Dev</RootNamespace>
+    <StartupObject>SampleTemplate.Dev.Main</StartupObject>
+    <RootNamespace>SampleTemplate.Dev</RootNamespace>
     <AssemblyName>HSPI_SampleTemplate.Dev</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
@@ -303,7 +303,8 @@
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
   -->
+  <Target Name="AfterBuild">
+    <Exec Command="powershell -file $(ProjectDir)fix-output.ps1 -configuration $(ConfigurationName) -executionpolicy Unrestricted -NonInteractive" />
+  </Target>
 </Project>

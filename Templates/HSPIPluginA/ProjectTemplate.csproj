@@ -10,7 +10,7 @@
 		<OutputType>Exe</OutputType>
 		<AppDesignerFolder>Properties</AppDesignerFolder>
 		<RootNamespace>$safeprojectname$</RootNamespace>
-		<AssemblyName>$safeprojectname$</AssemblyName>
+		<AssemblyName>HSPI_$safeprojectname$</AssemblyName>
 		<TargetFrameworkVersion>v$targetframeworkversion$</TargetFrameworkVersion>
 		<FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -59,8 +59,9 @@
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
   -->
+  <Target Name="AfterBuild">
+    <Exec Command="powershell -file $(ProjectDir)fix-output.ps1 -configuration $(ConfigurationName) -executionpolicy Unrestricted -NonInteractive" />
+  </Target>
 
  </Project>

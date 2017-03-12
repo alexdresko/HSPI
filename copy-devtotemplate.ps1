@@ -18,3 +18,12 @@ gci templates\*.dev -Directory | foreach {
         [System.IO.File]::WriteAllText($_.FullName, $content)
     }
 }
+
+gci templates\all | % {
+    $file = $_.FullName
+    $name = $_.Name
+
+    gci templates -Directory | where { $_.Name -notmatch "All|HomeSeerTemplates"} | % { 
+        copy-item $file -Destination $_ -Force -Verbose
+    }
+}
