@@ -6,6 +6,9 @@ Features
 The templates
 -------------
 
+C#
+^^
+
 Until we have awesome names for the templates, you’ll have to use this key to determine which template is most appropriate for your project. 
 
 * **HSPIPluginA**
@@ -23,6 +26,14 @@ Until we have awesome names for the templates, you’ll have to use this key to 
     The plugin created in this template inherits from ``Hspi.HspiBase2`` which inherits from ``Hspi.HspiBase``.  
 
     You get all of the benefits of HSPI, without having to implement everything in HomeSeer’s ``IPluginAPI`` interface. The base class implements suitable defaults for basic plugins, preventing you from having to understand everything in ``IPluginAPI``.  The flip side to such minimalistic code is that it’s not obvious which methods you *can* override. 
+
+VB.NET
+^^^^^^
+
+Yes, the HSPI extension includes the original HomeSeer VB.NET project samples and templates in the extension. They're mostly changed from the download at https://forums.homeseer.com/showthread.php?t=160064, except the project uses the HomeSeerNuget package to make getting started a little easier. You'll find everything under ``Visual Basic > HomeSeer``.  
+
+.. image:: _static/vb-templates.png
+
 
 Code Quality
 -------------

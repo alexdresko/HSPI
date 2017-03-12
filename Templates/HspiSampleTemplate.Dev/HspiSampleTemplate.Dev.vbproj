@@ -9,9 +9,9 @@
     </SchemaVersion>
     <ProjectGuid>{A3B6D762-301C-41C3-8C70-1924E89BA9A5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>HspiSampleTemplate.Dev.Main</StartupObject>
-    <RootNamespace>HspiSampleTemplate.Dev</RootNamespace>
-    <AssemblyName>HspiSampleTemplate.Dev</AssemblyName>
+    <StartupObject>SampleTemplate.Dev.Main</StartupObject>
+    <RootNamespace>SampleTemplate.Dev</RootNamespace>
+    <AssemblyName>HSPI_SampleTemplate.Dev</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -25,7 +25,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>false</DefineTrace>
     <OutputPath>..\..\HomeSeer\</OutputPath>
-    <DocumentationFile>HspiSampleTemplate.Dev.xml</DocumentationFile>
+    <DocumentationFile>HSPI_SampleTemplate.Dev.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DefineConstants>PlugDLL=False</DefineConstants>
     <Prefer32Bit>false</Prefer32Bit>
@@ -37,7 +37,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>HspiSampleTemplate.Dev.xml</DocumentationFile>
+    <DocumentationFile>HSPI_SampleTemplate.Dev.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -58,7 +58,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\Linux Release\</OutputPath>
-    <DocumentationFile>HspiSampleTemplate.Dev.xml</DocumentationFile>
+    <DocumentationFile>HSPI_SampleTemplate.Dev.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -76,7 +76,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineDebug>true</DefineDebug>
     <OutputPath>bin\x86\Linux Debug\</OutputPath>
-    <DocumentationFile>HspiSampleTemplate.Dev.xml</DocumentationFile>
+    <DocumentationFile>HSPI_SampleTemplate.Dev.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -93,10 +93,10 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineDebug>true</DefineDebug>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>HspiSampleTemplate.Dev.xml</DocumentationFile>
+    <DocumentationFile>HSPI_SampleTemplate.Dev.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisLogFile>..\..\HomeSeer\HSPI_SAMPLE_BASIC.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
@@ -108,11 +108,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>HspiSampleTemplate.Dev.xml</DocumentationFile>
+    <DocumentationFile>HSPI_SampleTemplate.Dev.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisLogFile>bin\Release\HSPI_SAMPLE_BASIC.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
@@ -126,10 +126,10 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>..\..\HomeSeer\</OutputPath>
-    <DocumentationFile>HspiSampleTemplate.Dev.xml</DocumentationFile>
+    <DocumentationFile>HSPI_SampleTemplate.Dev.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisLogFile>..\..\HomeSeer\HSPI_SAMPLE_BASIC.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
@@ -143,10 +143,10 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineDebug>true</DefineDebug>
     <OutputPath>..\..\HomeSeer\</OutputPath>
-    <DocumentationFile>HspiSampleTemplate.Dev.xml</DocumentationFile>
+    <DocumentationFile>HSPI_SampleTemplate.Dev.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisLogFile>..\..\HomeSeer\HSPI_SAMPLE_BASIC.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
@@ -161,7 +161,7 @@
     <DefineDebug>true</DefineDebug>
     <OutputPath>bin\x86\Linux Zee Debug\</OutputPath>
     <DefineConstants>PlugDLL=True</DefineConstants>
-    <DocumentationFile>HspiSampleTemplate.Dev.xml</DocumentationFile>
+    <DocumentationFile>HSPI_SampleTemplate.Dev.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -178,10 +178,10 @@
     <DefineDebug>true</DefineDebug>
     <OutputPath>bin\Linux Zee Debug\</OutputPath>
     <DefineConstants>PlugDLL=True</DefineConstants>
-    <DocumentationFile>HspiSampleTemplate.Dev.xml</DocumentationFile>
+    <DocumentationFile>HSPI_SampleTemplate.Dev.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisLogFile>..\..\HomeSeer\HSPI_SAMPLE_BASIC.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
@@ -195,7 +195,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\Linux Zee Release\</OutputPath>
-    <DocumentationFile>HspiSampleTemplate.Dev.xml</DocumentationFile>
+    <DocumentationFile>HSPI_SampleTemplate.Dev.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -213,10 +213,10 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>..\..\HomeSeer\</OutputPath>
     <DefineConstants>PlugDLL=True</DefineConstants>
-    <DocumentationFile>HspiSampleTemplate.Dev.xml</DocumentationFile>
+    <DocumentationFile>HSPI_SampleTemplate.Dev.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisLogFile>..\..\HomeSeer\HSPI_SAMPLE_BASIC.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
@@ -287,6 +287,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="fix-output.ps1" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -303,7 +304,8 @@
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
   -->
+  <Target Name="AfterBuild">
+    <Exec Command="powershell -file $(ProjectDir)fix-output.ps1 -configuration $(ConfigurationName) -executionpolicy Unrestricted -NonInteractive" />
+  </Target>
 </Project>
