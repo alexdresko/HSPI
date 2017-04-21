@@ -8,7 +8,7 @@ Project templates for Visual Studio 2015 and Visual Studio 2017
 
 With HSPI, getting started with HomeSeer development is as simple as:
 
-1.	Locate and install the HSPI extension in Visual Studio via “Tools > Extensions and Updates” or download it from https://marketplace.visualstudio.com/items?itemName=thealexdresko.HomeSeerTemplates 
+1.	Locate and install the HSPI extension in Visual Studio via “Tools > Extensions and Updates” or download it from https://marketplace.visualstudio.com/items?itemName=thealexdresko.HomeSeerTemplates-18379
 2.	File > New Project > HomeSeer > Select a template
 3.	F5 to launch the project and verify connectivity to HomeSeer. 
     
