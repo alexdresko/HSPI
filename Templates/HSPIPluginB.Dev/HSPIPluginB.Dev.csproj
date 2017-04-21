@@ -7,8 +7,8 @@
     <ProjectGuid>{8F609EDB-0CFF-4B67-A7ED-265331C90F91}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HSPIPluginB.Dev</RootNamespace>
-    <AssemblyName>HSPIPluginB.Dev</AssemblyName>
+    <RootNamespace>PluginB.Dev</RootNamespace>
+    <AssemblyName>HSPI_PluginB.Dev</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="fix-output.ps1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\HSPI\HSPI.csproj">
@@ -63,7 +64,8 @@
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
   -->
+  <Target Name="AfterBuild">
+    <Exec Command="powershell -file $(ProjectDir)fix-output.ps1 -configuration $(ConfigurationName) -executionpolicy Unrestricted -NonInteractive" />
+  </Target>
 </Project>

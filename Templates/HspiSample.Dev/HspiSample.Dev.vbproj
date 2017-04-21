@@ -10,8 +10,8 @@
     <ProjectGuid>{F7A35F28-7139-4D58-A03A-031BD2E8C1C2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <StartupObject>Sub Main</StartupObject>
-    <RootNamespace>HSPI_SAMPLE</RootNamespace>
-    <AssemblyName>HSPI_SAMPLE</AssemblyName>
+    <RootNamespace>Sample.Dev</RootNamespace>
+    <AssemblyName>HSPI_Sample.Dev</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -24,7 +24,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>false</DefineTrace>
     <OutputPath>..\..\HomeSeer\</OutputPath>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
@@ -38,7 +38,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>..\..\HomeSeer\</OutputPath>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
@@ -65,7 +65,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\Linux Release\</OutputPath>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -84,7 +84,7 @@
     <DefineDebug>true</DefineDebug>
     <OutputPath>..\..\HomeSeer\</OutputPath>
     <DefineConstants>PlugDLL=True</DefineConstants>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -103,10 +103,10 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineDebug>true</DefineDebug>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisLogFile>..\..\HomeSeer\HSPI_SAMPLE.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
@@ -121,7 +121,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>pdbonly</DebugType>
@@ -139,7 +139,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>..\..\HomeSeer\</OutputPath>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -157,7 +157,7 @@
     <DefineDebug>true</DefineDebug>
     <OutputPath>..\..\HomeSeer\</OutputPath>
     <DefineConstants>PlugDLL=False</DefineConstants>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -176,7 +176,7 @@
     <DefineDebug>true</DefineDebug>
     <OutputPath>bin\x86\Linux Zee Debug\</OutputPath>
     <DefineConstants>PlugDLL=True</DefineConstants>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -193,7 +193,7 @@
     <DefineDebug>true</DefineDebug>
     <OutputPath>bin\Linux Zee Debug\</OutputPath>
     <DefineConstants>PlugDLL=True</DefineConstants>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -210,7 +210,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\Linux Zee Release\</OutputPath>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -231,7 +231,7 @@
     <DefineTrace>false</DefineTrace>
     <OutputPath>..\..\HomeSeer\</OutputPath>
     <DefineConstants>PlugDLL=True</DefineConstants>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -248,7 +248,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\Linux ZeePlus Release\</OutputPath>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -264,7 +264,7 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>..\..\HomeSeer\</OutputPath>
     <DefineConstants>PlugDLL=False</DefineConstants>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -281,7 +281,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\Linux Zee Plus Release\</OutputPath>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -297,7 +297,7 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Linux Zee Plus Release\</OutputPath>
     <DefineConstants>PlugDLL=False</DefineConstants>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -314,7 +314,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\Linux Zee Release ASCII\</OutputPath>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -327,7 +327,7 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Linux Zee Release ASCII\</OutputPath>
     <DefineConstants>PlugDLL=True</DefineConstants>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -339,7 +339,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\Linux Release SEL\</OutputPath>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -353,7 +353,7 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>..\..\HomeSeer\</OutputPath>
     <DefineConstants>PlugDLL=False</DefineConstants>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -365,7 +365,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\HTZEES2\</OutputPath>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -379,7 +379,7 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>..\..\HomeSeer\</OutputPath>
     <DefineConstants>PlugDLL=False</DefineConstants>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -391,7 +391,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\HTZEES2ASCII\</OutputPath>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -405,7 +405,7 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>..\..\HomeSeer\</OutputPath>
     <DefineConstants>PlugDLL=False</DefineConstants>
-    <DocumentationFile>HSPI_SAMPLE.xml</DocumentationFile>
+    <DocumentationFile>HSPI_Sample.Dev.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -470,6 +470,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="fix-output.ps1" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -493,7 +494,8 @@
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
   -->
+  <Target Name="AfterBuild">
+    <Exec Command="powershell -file $(ProjectDir)fix-output.ps1 -configuration $(ConfigurationName) -executionpolicy Unrestricted -NonInteractive" />
+  </Target>
 </Project>
