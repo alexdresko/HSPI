@@ -3,8 +3,9 @@ using System.Collections.Specialized;
 using HomeSeerAPI;
 using Hspi;
 
-namespace $safeprojectname$
+//TODO: namespace $safeprojectname$
 
+namespace HSPIPluginA.Dev
 {
     // ReSharper disable once InconsistentNaming
     public class HSPI : HspiBase
@@ -273,8 +274,8 @@ namespace $safeprojectname$
 
         protected override string GetName()
         {
-            return "$projectname$";
-
+            //TODO: return "$projectname$";
+            return "HSPIPluginA.Dev";
         }
 
         protected override bool GetHscomPort()
