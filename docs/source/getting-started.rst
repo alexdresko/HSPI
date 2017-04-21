@@ -11,7 +11,7 @@ These instructions assume you have a default HomeSeer installation on the same c
 
     .. figure:: _static/extensions-and-updates-search.png
 
-    Alternatively, download it from https://marketplace.visualstudio.com/items?itemName=thealexdresko.HomeSeerTemplates 
+    Alternatively, download it from https://marketplace.visualstudio.com/items?itemName=thealexdresko.HomeSeerTemplates-18379
 
 #. Once installed, you can “File > New Project” to create a HomeSeer plugin. The templates can be found under “Templates > Visual C# > HomeSeer”. 
  
