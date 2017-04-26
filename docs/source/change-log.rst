@@ -14,7 +14,7 @@ Templates
 ^^^^^^^^^
 
 * 3/11/2017 7:35:13 PM by AD: The original HomeSeer provided VB.NET templates are included in the VS extension! For the most part, they are completely unmodified. I simply included them in the extension as a reference. For most cases, you'll want to start with the custom C# HSPI project templates that come with the extension. 
-* 3/11/2017 7:37:30 PM by AD:   The binary files created by the templates automatically conform to the standard HS plugin structure wherein the plugin's dependencies are in a subdirectory called ``bin/<plugin name>``. If that sounds confusing, here's what it looks like:
+* 3/11/2017 7:37:30 PM by AD:   The binary files created by the templates automatically conform to the standard HS plugin structure wherein the plugin's dependencies are in a subdirectory called ``bin/<plugin name>``. If that sounds confusing, here's what it looks like::
 
     HSPI_YourPlugIn.exe
     HSPI_YourPlugIn.exe.config
@@ -26,6 +26,8 @@ Templates
     bin\YourPlugIn\Hspi.dll.config
     bin\YourPlugIn\Hspi.pdb
     bin\YourPlugIn\Scheduler.dll
+    bin\YourPlugIn\SomeOtherAssembly.dll
+    bin\YourPlugIn\YetAnotherAssembly.dll
 
  This directory structure enables plugins to avoid version conflicts with other plugins that depend on different versions of the same dependencies. Installing your plugin into HomeSeer is as simple as copying the entire output directory (``/bin/(debug|release)``) into your HomeSeer directory (typically ``C:\Program Files (x86)\HomeSeer HS3``). 
 
