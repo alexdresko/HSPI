@@ -21,7 +21,7 @@
             <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
             <ProjectItem ReplaceParameters="true" OpenInEditor="true">HSPI.cs</ProjectItem>
             <ProjectItem ReplaceParameters="true" OpenInEditor="true">Program.cs</ProjectItem>
-            <ProjectItem ReplaceParameters="false" OpenInEditor="false">App.config</ProjectItem>
+            <ProjectItem ReplaceParameters="true" OpenInEditor="false">App.config</ProjectItem>
             <ProjectItem ReplaceParameters="false" OpenInEditor="false">fix-output.ps1</ProjectItem>
         </Project>
     </TemplateContent>
