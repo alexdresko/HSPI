@@ -32,7 +32,7 @@ Other Helpful Links
 
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 4
     :caption: Contents:
 
     self
@@ -40,6 +40,7 @@ Other Helpful Links
     getting-started
     features
     how-to-contribute
+    code-of-conduct
     change-log
     meta
 
