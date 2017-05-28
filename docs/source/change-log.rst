@@ -10,6 +10,7 @@ Contributers
 * 3/11/2017 10:27:59 AM by AD:   Switched to more of a gitflow (http://nvie.com/posts/a-successful-git-branching-model/) based branching strategy. The biggest reason for the switch is because I'm trying to make better use of the build system -- Basically, I don't want to continuously publish an updated nuget package and VSIX extension for every arbitrary change we make. Having a ``dev`` branch allows us to stage blocks of changes before merging ``dev`` into ``master``. It's the merging of ``dev`` into ``master`` that triggers the nuget & VSIX publishing, so you can see why merging directly into ``master`` often would be problematic. Maybe it's just me, but I think it's annoying with a nuget package or VS extension is being updated multiple times a day. 
 * 3/11/2017 10:28:05 AM by AD:   I closed out the "Good enough to use" milestone (https://github.com/alexdresko/HSPI/milestone/1) (because it is), and started "Definitive" https://github.com/alexdresko/HSPI/milestone/2
 * 5/24/2017 1:44:31 PM by AD:   Created a code of conduct in the documentation. 
+* 5/27/2017 by AD: Documentation documentation! Hopefully this will allow others to help with the HSPI documentation!
 
 Templates
 ^^^^^^^^^
