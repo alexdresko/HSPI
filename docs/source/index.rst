@@ -3,7 +3,8 @@ Welcome to the HSPI documentation!
 ==================================
 
 Summary
-=======
+-------
+
 HSPI aims to make extending HomeSeer significantly easier by empowering developers with awesome tools and a collaborative community. 
 Learn more at https://github.com/alexdresko/HSPI 
 
@@ -21,7 +22,7 @@ Learn more at https://github.com/alexdresko/HSPI
     https://gitter.im/HSPI/Lobby
 
 Other Helpful Links
-===================
+-------------------
 
 * HomeSeer’s HS3 developer forum:
     https://forums.homeseer.com/forumdisplay.php?f=1138
@@ -40,7 +41,6 @@ Other Helpful Links
     getting-started
     features
     how-to-contribute
-    code-of-conduct
     change-log
     meta
 
