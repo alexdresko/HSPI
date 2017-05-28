@@ -17,7 +17,7 @@ Installing the software
  At any point in the following steps, you may need to restart your console for the newly installed tool to become available in your console session. 
 #. Install git via `choco install git -y`
 #. Install python via `choco install python -y`
-#. Install VS Code via `choco install visualstudiocode -y`
+#. Install VS Code via `choco install visualstudiocode -y`. I prefer to write the documentation in VS Code simply because I like VS Code. 
 #. Install Nodejs via `choco install nodejs -y`
 #. Install Sphinx via `pip install sphinx`
 #. Install Sphinx autobuild via `pip install sphinx sphinx-autobuild`
@@ -40,9 +40,3 @@ To learn more about ReadTheDocs, go to http://docs.readthedocs.io/en/latest/
 .. _Python: https://www.python.org/
 .. _Sphinx: http://sphinx-doc.org/latest/install.html
 .. _Chocolatey: https://chocolatey.org/install
-
-Once you have Python and Sphinx installed, drop to a command line and run `pip install sphinx sphinx-autobuild` to get the Shinx build tool. 
-
-
-
-I prefer to write the documentation in VS Code simply because I like VS Code. 
