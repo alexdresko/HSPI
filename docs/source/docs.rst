@@ -4,7 +4,9 @@ Documentation
 Summary
 -------
 
-This document explains how to set up your environment to make changes to HSPI's documentation. If you're a new contributer to HSPI, be sure to read everything in :doc:``how-to-contribute``.
+Please help write HSPI's documentation! This project started with the vision of combining and simplifying a lot of work that was already out there. None of that existing work had documentation, so we started with nothing. Any time HSPI confuses you is a good opportunity for documentation. If you can't contribute to HSPI's documentation, at least voice your confusion in our `chat room`_ so someone else can clarify things. 
+
+This document explains how to set up your environment to make changes to HSPI's documentation. If you're a new contributer to HSPI, be sure to read everything in :doc:`how-to-contribute`.
 
 HSPI's documentation is hosted on https://readthedocs.org/ (RTD). The documentation is written using Sphinx_, so you'll need Python_.  You'll also want gulp, and therefore Node if you want to take advantage of some of the utilities I wrote to make writing documentation for HSPI easier. 
 
@@ -50,6 +52,18 @@ Check out the code for this page in the repository to see how that's done. And t
 
 Note that Sphinx has trouble applying syntax highlighting to some C# files. 
 
-.. _Python: https://www.python.org/
-.. _Sphinx: http://sphinx-doc.org/latest/install.html
-.. _Chocolatey: https://chocolatey.org/install
+Common Substitutions
+--------------------
+The ``rst_epilog`` variable in ``conf.py`` contains a list of common subsitutions. At the time of writing, it looks like the list below, but it's expected to grow quickly.
+
+.. code-block:: python
+
+    rst_epilog = """
+    .. _Python: https://www.python.org/
+    .. _Sphinx: http://sphinx-doc.org/latest/install.html
+    .. _Chocolatey: https://chocolatey.org/install
+    .. _chat room: https://gitter.im/HSPI/Lobby
+    .. |ad| replace:: Alex Dresko
+    .. _ad: http://www.alexdresko.com
+    .. _`Contributor Covenant`: http://contributor-covenant.org
+    """
