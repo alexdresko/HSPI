@@ -21,6 +21,16 @@ import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import sphinx_rtd_theme
 
+rst_epilog = """
+.. _Python: https://www.python.org/
+.. _Sphinx: http://sphinx-doc.org/latest/install.html
+.. _Chocolatey: https://chocolatey.org/install
+.. _chat room: https://gitter.im/HSPI/Lobby
+.. |ad| replace:: Alex Dresko
+.. _ad: http://www.alexdresko.com
+.. _`Contributor Covenant`: http://contributor-covenant.org
+"""
+
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.

@@ -3,10 +3,13 @@ Welcome to the HSPI documentation!
 ==================================
 
 Summary
-=======
+-------
+
 HSPI aims to make extending HomeSeer significantly easier by empowering developers with awesome tools and a collaborative community. 
 Learn more at https://github.com/alexdresko/HSPI 
 
+* **For all the latest HSPI news, status updates, and release information**
+    https://hspiweb.wordpress.com/
 * **New to HSPI and looking for documentation?** We’ve got that.
     http://hspi.readthedocs.io/en/latest/ 
 * **Got a question about HSPI?** Ask on Stack Overflow and tag with “HSPI”. We’re watching and waiting for your questions. 
@@ -21,7 +24,7 @@ Learn more at https://github.com/alexdresko/HSPI
     https://gitter.im/HSPI/Lobby
 
 Other Helpful Links
-===================
+-------------------
 
 * HomeSeer’s HS3 developer forum:
     https://forums.homeseer.com/forumdisplay.php?f=1138
@@ -32,14 +35,15 @@ Other Helpful Links
 
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 4
     :caption: Contents:
 
     self
     what-is-it
-    getting-started
     features
+    using-hspi
     how-to-contribute
+    roadmap
     change-log
     meta
 

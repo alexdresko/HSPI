@@ -17,4 +17,4 @@ gulp.task('watch', ['browser-sync'], () => {
     gulp.watch('./docs/source/**/*.rst', ['build']);
 });
 
-gulp.task('build', shell.task('docs\\make.bat html'));
+gulp.task('build', shell.task('docs\\make.bat html -a'));
