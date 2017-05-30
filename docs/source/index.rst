@@ -8,6 +8,8 @@ Summary
 HSPI aims to make extending HomeSeer significantly easier by empowering developers with awesome tools and a collaborative community. 
 Learn more at https://github.com/alexdresko/HSPI 
 
+* **For all the latest HSPI news, status updates, and release information**
+    https://hspiweb.wordpress.com/
 * **New to HSPI and looking for documentation?** We’ve got that.
     http://hspi.readthedocs.io/en/latest/ 
 * **Got a question about HSPI?** Ask on Stack Overflow and tag with “HSPI”. We’re watching and waiting for your questions. 
