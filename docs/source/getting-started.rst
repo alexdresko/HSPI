@@ -1,6 +1,8 @@
 Getting Started
 ###############
 
+If you are looking to contribute to the HSPI project, please see :doc:`how-to-contribute`
+
 These instructions assume you have a default HomeSeer installation on the same computer that you’ll be developing on. If that is not the case, you can still follow these instructions, and then refer to the remaining HSPI documentation to adapt the project for your environment. 
 
 1. In Visual Studio, open “Tools > Extensions and Updates”
