@@ -38,9 +38,10 @@ Other Helpful Links
 
     self
     what-is-it
-    getting-started
     features
+    using-hspi
     how-to-contribute
+    roadmap
     change-log
     meta
 
