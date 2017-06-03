@@ -29,6 +29,7 @@ rst_epilog = """
 .. |ad| replace:: Alex Dresko
 .. _ad: http://www.alexdresko.com
 .. _`Contributor Covenant`: http://contributor-covenant.org
+.. _ZenHub: https://www.zenhub.com/product
 """
 
 # -- General configuration ------------------------------------------------
