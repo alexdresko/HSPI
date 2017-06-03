@@ -5,11 +5,6 @@ I love when a software project has a good roadmap.
 
 Unfortunately, I've never built a cool roadmap. :) 
 
-Current status: Disheveled
---------------------------
+In no particular order, and without attaching a date to anything (estimates suck), here are some long term goals for HSPI:
 
-* The project is still under active development.
-* Documentation is lacking, but growing. 
-* A few developers have expressed interest in HSPI, both in using and contributing. 
-* https://github.com/zshall is helping to make sure I maintain a diciplined workflow. 
-* 
+* It would be cool if HomeSeer would officially declared HSPI to be the preferred HomeSeer developer toolkit. Even better if they contributed to HSPI instead of their current process which basically involves updating a zip file of VB.NET examples. 
