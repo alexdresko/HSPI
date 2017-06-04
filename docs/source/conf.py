@@ -26,9 +26,14 @@ rst_epilog = """
 .. _Sphinx: http://sphinx-doc.org/latest/install.html
 .. _Chocolatey: https://chocolatey.org/install
 .. _chat room: https://gitter.im/HSPI/Lobby
+.. _chat: https://gitter.im/HSPI/Lobby
 .. |ad| replace:: Alex Dresko
 .. _ad: http://www.alexdresko.com
 .. _`Contributor Covenant`: http://contributor-covenant.org
+.. _ZenHub: https://www.zenhub.com/product
+.. _milestone: https://github.com/alexdresko/HSPI/milestones
+.. _helpwanted: https://github.com/alexdresko/HSPI/labels/help%20wanted
+.. |helpwanted| replace:: Help Wanted
 """
 
 # -- General configuration ------------------------------------------------
