@@ -30,8 +30,10 @@ Other Helpful Links
     https://forums.homeseer.com/forumdisplay.php?f=1138
 * HomeSeer’s original plugin samples:
     https://forums.homeseer.com/showthread.php?t=160064
-* HomeSeer’s SDK documentation:
-    http://homeseer.com/support/homeseer/HS3/SDK/default.htm 
+* HomeSeer’s developer support:
+    https://homeseer.com/developer-support/
+* HomeSeer’s Support pages:
+    https://homeseer.com/support-home/
 
 
 .. toctree::

@@ -102,7 +102,7 @@ namespace HSPIPluginA.Dev
 
 
             // let our console wrapper know we are finished
-            Shutdown = true;
+            IsShuttingDown = true;
 
             // debug
             HS.WriteLog(Name, "Completed ShutdownIO");
@@ -267,11 +267,6 @@ namespace HSPIPluginA.Dev
             return false;
         }
 
-        protected override int GetTriggerCount()
-        {
-            return 0;
-        }
-
         protected override string GetName()
         {
             //TODO: return "$projectname$";
@@ -281,10 +276,6 @@ namespace HSPIPluginA.Dev
         protected override bool GetHscomPort()
         {
             return true;
-        }
-
-        public override void SetDeviceValue(int deviceId, double value, bool trigger = true)
-        {
         }
     }
 }

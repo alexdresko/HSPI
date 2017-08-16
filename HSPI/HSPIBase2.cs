@@ -124,11 +124,6 @@ namespace Hspi
             return false;
         }
 
-        protected override int GetTriggerCount()
-        {
-            return 0;
-        }
-
         public override void SetIOMulti(List<CAPI.CAPIControl> colSend)
         {
             // homeseer will inform us when the one of our devices has changed.  Push that change through to the field.
@@ -294,11 +289,6 @@ namespace Hspi
 
         public override void PluginPropertySet(string propertyName, object value)
         {
-        }
-
-        public override void SetDeviceValue(int deviceId, double value, bool trigger = true)
-        {
-            HS.SetDeviceValueByRef(deviceId, value, trigger);
         }
     }
 }

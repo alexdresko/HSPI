@@ -78,6 +78,14 @@
   <ItemGroup>
     <Compile Include="Exceptions\HspiConnectionException.cs" />
     <Compile Include="Exceptions\HspiException.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="HspiPlugin3\Action.cs" />
+    <Compile Include="HspiPlugin3\Device.cs" />
+    <Compile Include="HspiPlugin3\HspiBase3.cs" />
+    <Compile Include="HspiPlugin3\LicenseLevel.cs" />
+    <Compile Include="HspiPlugin3\MessageType.cs" />
+    <Compile Include="HspiPlugin3\TreeNode.cs" />
+    <Compile Include="HspiPlugin3\Trigger.cs" />
     <Compile Include="PageBuilder.cs" />
     <Compile Include="HSPIBase2.cs" />
     <Compile Include="HSPIBase.cs" />

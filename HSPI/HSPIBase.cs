@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
+using System.Text.RegularExpressions;
 using HomeSeerAPI;
 using Hspi.Exceptions;
 using HSCF.Communication.Scs.Communication;
@@ -23,7 +24,7 @@ namespace Hspi
             Justification = "R# doesn't like MS's standard.")]
         protected IScsServiceClient<IHSApplication> HsClient { get; set; }
 
-        public bool Shutdown { get; set; }
+        public bool IsShuttingDown { get; set; }
 
         /// <summary>
         ///     Test our SCS client connection: <see cref="Hspi" /> is connected.
@@ -32,11 +33,23 @@ namespace Hspi
         /// <value><c>true</c> if connected; otherwise, <c>false</c>.</value>
         public bool Connected => HsClient.CommunicationState == CommunicationStates.Connected;
 
-        public string Name => GetName();
+        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
+        public string Name
+        {
+            get
+            {
+                var name = GetName();
+                if (Regex.IsMatch(name, "[^a-zA-Z0-9\\-\\. ]"))
+                {
+                    throw new HspiException("Name cannot include special characters");
+                }
+
+                return name;
+            }
+        }
 
         /// <summary>
         ///     Get the instance name of this plugin.  Only valid if SupportsMultipleInstances is true.
-        ///     Multiple instance are not supported by this plugin.
         /// </summary>
         /// <returns>System.String</returns>
         public abstract string InstanceFriendlyName();
@@ -407,7 +420,7 @@ namespace Hspi
 
         public bool HasTriggers => GetHasTriggers();
 
-        public int TriggerCount => GetTriggerCount();
+        public int TriggerCount => TriggerCount;
 
         /// <summary>
         ///     The HomeSeer events page has an option to set the editing mode to "Advanced Mode".
@@ -440,9 +453,6 @@ namespace Hspi
 
         /// <summary> Indicate if the plugin has any triggers. </summary>
         protected abstract bool GetHasTriggers();
-
-        /// <summary> Number of triggers the plugin supports. </summary>
-        protected abstract int GetTriggerCount();
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary> Get the name of this plugin </summary>
@@ -503,13 +513,5 @@ namespace Hspi
         /// <summary> Indicate if Homeseer should manage a COM port for the plugin. </summary>
         /// <value><c>true</c> if COM port required; otherwise, <c>false</c>.</value>
         protected abstract bool GetHscomPort();
-
-        /// <summary>
-        ///     Sets the device value.
-        /// </summary>
-        /// <param name="deviceId">The device reference identifier.</param>
-        /// <param name="value">The value/status of the device.</param>
-        /// <param name="trigger">if set to <c>true</c> process triggers normally, otherwise only change the value.</param>
-        public abstract void SetDeviceValue(int deviceId, double value, bool trigger = true);
     }
 }
