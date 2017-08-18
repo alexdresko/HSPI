@@ -7,8 +7,8 @@
     <ProjectGuid>{FA50566B-5D1D-41A1-B23C-C8DF6C311342}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PluginB.Dev</RootNamespace>
-    <AssemblyName>HSPI_PluginB.Dev</AssemblyName>
+    <RootNamespace>PluginC.Dev</RootNamespace>
+    <AssemblyName>HSPI_PluginC.Dev</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventConfiguration.cs" />
     <Compile Include="HSPI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
