@@ -15,12 +15,8 @@ namespace HSPIPluginC.Dev
             throw new System.NotImplementedException();
         }
 
-        public override string Init()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void Shutdown()
+        
+        public override IPlugInAPI.PollResultInfo Poll()
         {
             throw new System.NotImplementedException();
         }

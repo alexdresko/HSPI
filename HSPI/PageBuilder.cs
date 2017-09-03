@@ -40,12 +40,12 @@ namespace Hspi
     ///     </list>
     /// </summary>
     /// <seealso cref="PageBuilderAndMenu.clsPageBuilder" />
-    public class PageBuilder : PageBuilderAndMenu.clsPageBuilder
+    public abstract class PageBuilder : PageBuilderAndMenu.clsPageBuilder
     {
         /// <summary>
         /// </summary>
         /// <param name="pagename">The name used by HomeSeer when referencing this particular page.</param>
-        public PageBuilder(string pagename) : base(pagename)
+        protected PageBuilder(string pagename) : base(pagename)
         {
         }
 

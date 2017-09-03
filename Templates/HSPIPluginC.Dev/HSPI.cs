@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Dynamic;
 using HomeSeerAPI;
 using Hspi;
 using Hspi.HspiPlugin3;
@@ -14,103 +15,97 @@ namespace HSPIPluginC.Dev
     {
         public override bool SupportsAddDevice()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         public override bool RaisesGenericCallbacks()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         public override bool SupportsConfigDevice()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         public override bool SupportsConfigDeviceAll()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         protected override void Shutdown()
         {
-            throw new System.NotImplementedException();
         }
-
-        
 
         protected override TreeNodeCollection<Trigger> GetTriggers()
         {
             return Triggers;
         }
 
-        protected override string InitIO()
+        protected override void InitIO()
         {
-            throw new System.NotImplementedException();
         }
 
-        /// <inheritdoc />
+        
         protected override EventContainerBase GetEventContainer() => new EventContainer(this);
 
         protected override IPlugInAPI.enumInterfaceStatus GetInterfaceStatus()
         {
-            throw new System.NotImplementedException();
+            return IPlugInAPI.enumInterfaceStatus.OK;
         }
 
         protected override LicenseLevel GetPluginLicense()
         {
-            throw new System.NotImplementedException();
+            return LicenseLevel.Free;
         }
 
         protected override bool SupportsThermostatCapability()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         protected override bool SupportsSourceSwitchCapability()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         protected override bool SupportsSecurityCapability()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         protected override bool SupportsMusicCapability()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         protected override bool PluginUsesComPort()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         protected override List<Page> GetPages()
         {
             return new List<Page>
             {
-                new Page()
+                new SamplePage()
             };
         }
 
-        
-
         public override bool SupportsMultipleInstances()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         public override bool SupportsMultipleInstancesSingleEXE()
         {
-            throw new System.NotImplementedException();
+            return false;
         }
 
         protected override string GetName()
         {
             //TODO: return "$projectname$";
-            return "HSPIPluginC.Dev";
+            return "HSPIPlugin C Dev";
         }
 
         protected override TreeNodeCollection<Action> GetActions()
@@ -122,7 +117,6 @@ namespace HSPIPluginC.Dev
         {
             return new List<Device>
             {
-                new SampleDevice()
             };
         }
     }

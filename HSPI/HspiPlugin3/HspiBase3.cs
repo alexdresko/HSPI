@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Web;
 using HomeSeerAPI;
+using Hspi.Exceptions;
 using Hspi.HspiPlugin3.Events;
 
 namespace Hspi.HspiPlugin3
@@ -26,7 +30,7 @@ namespace Hspi.HspiPlugin3
 
         protected abstract TreeNodeCollection<Trigger> GetTriggers();
 
-        protected abstract string InitIO();
+        protected abstract void InitIO();
 
         protected abstract bool PluginUsesComPort();
 
@@ -54,7 +58,9 @@ namespace Hspi.HspiPlugin3
 
         public override bool ActionConfigured(IPlugInAPI.strTrigActInfo actionInfo)
         {
-            throw new NotImplementedException();
+            var action = ActionFromTriggerActionInfo(actionInfo);
+
+            return action?.Data?.ActionConfigured() ?? false;
         }
 
         public override int ActionCount()
@@ -64,7 +70,9 @@ namespace Hspi.HspiPlugin3
 
         public override string ActionFormatUI(IPlugInAPI.strTrigActInfo actionInfo)
         {
-            throw new NotImplementedException();
+            var action = ActionFromTriggerActionInfo(actionInfo);
+
+            return action?.Data?.FormatUI() ?? string.Empty;
         }
 
         public override IPlugInAPI.strMultiReturn ActionProcessPostUI(NameValueCollection postData,
@@ -75,7 +83,9 @@ namespace Hspi.HspiPlugin3
 
         public override bool ActionReferencesDevice(IPlugInAPI.strTrigActInfo actionInfo, int deviceId)
         {
-            throw new NotImplementedException();
+            var action = ActionFromTriggerActionInfo(actionInfo);
+
+            return action?.Data?.ReferencesDevice(deviceId) ?? false;
         }
 
         public override int Capabilities()
@@ -102,7 +112,32 @@ namespace Hspi.HspiPlugin3
 
         public override string GenPage(string link)
         {
-            throw new NotImplementedException();
+            //var page = PageByLinkObsoleteMaybe(link);
+
+            //if (page?.UseRedirect() ?? false)
+            //{
+            //    var aspxFile = page.RedirectUrl();
+            //    if (string.IsNullOrWhiteSpace(aspxFile))
+            //    {
+            //        throw new HspiException("Redirect URL cannot be null or empty");
+            //    }
+
+            //    var sb = new StringBuilder();
+            //    var data = new StringBuilder();
+            //    data.Append("<HEAD>" + Environment.NewLine);
+            //    data.Append($"<meta http-equiv=\"refresh\" content=\"0;url={aspxFile}\">" + Environment.NewLine);
+            //    data.Append("</HEAD>" + Environment.NewLine);
+            //    sb.Append("HTTP/1.0 200 OK" + Environment.NewLine);
+            //    sb.Append("Server: HomeSeer" + Environment.NewLine);
+            //    sb.Append("Expires: Sun, 22 Mar 1993 16:18:35 GMT" + Environment.NewLine);
+            //    sb.Append("Content-Type: text/html" + Environment.NewLine);
+            //    sb.Append("Accept-Ranges: bytes" + Environment.NewLine);
+            //    sb.Append("Content-Length: " + data.Length + Environment.NewLine + Environment.NewLine);
+            //    sb.Append(data);
+            //    return sb.ToString();
+            //}
+
+            return string.Empty;
         }
 
         public override string get_ActionName(int actionNumber)
@@ -152,7 +187,14 @@ namespace Hspi.HspiPlugin3
 
         public override string GetPagePlugin(string page, string user, int userRights, string queryString)
         {
-            throw new NotImplementedException();
+            var found = Pages.SingleOrDefault(p => p.GetPageTitle() == page);
+            var parts = HttpUtility.ParseQueryString(queryString);
+            if (found != null)
+            {
+                return found.GetPagePlugin(user, userRights, parts) ?? string.Empty;
+            }
+
+            return string.Empty;
         }
 
         public override bool HandleAction(IPlugInAPI.strTrigActInfo actionInfo)
@@ -168,24 +210,52 @@ namespace Hspi.HspiPlugin3
         public override string InitIO(string port)
         {
             Port = port;
-            foreach (var device in GetDevices())
-            {
-                var init = device.Init();
-                if (!string.IsNullOrWhiteSpace(init))
-                {
-                    return init;
-                }
-            }
-
             _eventProcessor = new EventProcessor(GetEventContainer(), Callback, GetName());
             _eventProcessor.Configure();
 
-            return InitIO();
+            Pages = GetPages();
+
+            foreach (var page in Pages)
+            {
+                page.PageName = page.GetPageTitle();
+                page.Root = this;
+
+                HS.RegisterPage(page.GetPageTitle(), GetName(), InstanceFriendlyName());
+
+                var webPageDesc = new WebPageDesc
+                {
+                    linktext = page.GetLinkText(),
+                    link = page.GetPageTitle(),
+                    page_title = page.GetPageTitle(),
+                    plugInName = GetName()
+                };
+
+                if (page.RegisterInInterfacesMenu())
+                {
+                    Callback.RegisterLink(webPageDesc);
+                }
+
+                if (page.RegisterInInterfaceConfigPage())
+                {
+                    Callback.RegisterConfigLink(webPageDesc);
+                }
+            }
+
+            ThreadPool.QueueUserWorkItem(InitIOWaitCallback);
+
+            return string.Empty;
+        }
+
+        public List<Page> Pages { get; set; }
+
+        private void InitIOWaitCallback(object state)
+        {
+            InitIO();
         }
 
         public override string InstanceFriendlyName()
         {
-            return Name;
+            return string.Empty;
         }
 
         public override IPlugInAPI.strInterfaceStatus InterfaceStatus()
@@ -197,7 +267,7 @@ namespace Hspi.HspiPlugin3
 
         public override string PagePut(string data)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
@@ -270,12 +340,20 @@ namespace Hspi.HspiPlugin3
 
         public override IPlugInAPI.PollResultInfo PollDevice(int deviceId)
         {
-            throw new NotImplementedException();
+            var device = DeviceFromDeviceId(deviceId);
+            return device?.Poll() ?? new IPlugInAPI.PollResultInfo { Result = IPlugInAPI.enumPollResult.Unknown };
+        }
+
+        private Device DeviceFromDeviceId(int deviceId)
+        {
+            return GetDevices().SingleOrDefault(p => p.GetId() == deviceId);
         }
 
         public override string PostBackProc(string page, string data, string user, int userRights)
         {
-            throw new NotImplementedException();
+            var found = Pages.SingleOrDefault(p => p.GetPageTitle() == page);
+
+            return found?.postBackProc(page, data, user, userRights) ?? string.Empty;
         }
 
         public override SearchReturn[] Search(string searchString, bool regEx)
@@ -322,11 +400,6 @@ namespace Hspi.HspiPlugin3
 
         public override void ShutdownIO()
         {
-            foreach (var device in GetDevices())
-            {
-                device.Shutdown();
-            }
-
             Shutdown();
         }
 

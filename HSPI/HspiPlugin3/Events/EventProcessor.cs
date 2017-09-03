@@ -59,58 +59,91 @@ namespace Hspi.HspiPlugin3.Events
                 case Enums.HSEvent.GENERIC:
                     _eventContainerBase.HandleGenericEvent(ParseGenericEvent(strings));
                     break;
+                case Enums.HSEvent.Unused_4000:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(eventType), eventType, null);
             }
         }
 
-        private GenericEventArgs ParseGenericEvent(List<string> strings)
+        private static GenericEventArgs ParseGenericEvent(List<string> strings)
         {
-            throw new NotImplementedException();
+            return new GenericEventArgs
+            {
+                Event = strings[1],
+                Sender = strings[2],
+                Parameters = strings.Skip(2).ToList()
+            };
         }
 
-        private SetupChangeEventArgs ParseSetupChangeEvent(List<string> strings)
+        private static SetupChangeEventArgs ParseSetupChangeEvent(List<string> strings)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException(
+                $"Investigate ParseSetupChangeEvent parameter: {string.Join("|", strings)}");
         }
 
-        private VoiceRecordEventArgs ParseVoiceRecordEvent(List<string> strings)
+        private static VoiceRecordEventArgs ParseVoiceRecordEvent(List<string> strings)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException(
+                $"Investigate ParseVoiceRecordEvent parameter: {string.Join("|", strings)}");
         }
 
-        private ValueSetEventArgs ParseValueSetEvent(List<string> strings)
+        private static ValueSetEventArgs ParseValueSetEvent(List<string> strings)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException(
+                $"Investigate ParseValueSetEvent parameter: {string.Join("|", strings)}");
         }
 
-        private ValueChangeEventArgs ParseValueChangeEvent(List<string> strings)
+        private static ValueChangeEventArgs ParseValueChangeEvent(List<string> strings)
         {
-            throw new NotImplementedException();
+            return new ValueChangeEventArgs
+            {
+                Address = strings[1],
+                NewValue = double.Parse(strings[2]),
+                OldValue = double.Parse(strings[3]),
+                DeviceReferenceNumber = int.Parse(strings[4])
+            };
         }
 
-        private CallerIdEventArgs ParseCallerIdEvent(List<string> strings)
+        private static CallerIdEventArgs ParseCallerIdEvent(List<string> strings)
         {
-            throw new NotImplementedException();
+            return new CallerIdEventArgs
+            {
+                Number = strings[1],
+                PhoneCompanyName = strings[2],
+                AddressBookLastName = strings[3],
+                AddressBookFirstName = strings[4],
+                AddressBookCompany = strings[5],
+                Line = strings[6]
+            };
         }
 
-        private SpeakerConnectEventArgs ParseSpeakerConnectEvent(List<string> strings)
+        private static SpeakerConnectEventArgs ParseSpeakerConnectEvent(List<string> strings)
         {
-            throw new NotImplementedException();
+            return new SpeakerConnectEventArgs
+            {
+                Host = strings[1],
+                Instance = strings[2],
+                ConnectionStatus = strings[3] == "0" ? SpeakerConnectionStatus.Disconnect : SpeakerConnectionStatus.Connect,
+                IpAddress = strings[4]
+            };
         }
 
-        private StringChangeEventArgs ParseStringChangeEvent(List<string> strings)
+        private static StringChangeEventArgs ParseStringChangeEvent(List<string> strings)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException(
+                $"Investigate ParseStringChangeEvent parameter: {string.Join("|", strings)}");
         }
 
-        private ConfigChangeArgs ParseConfigChangeEvent(List<string> strings)
+        private static ConfigChangeArgs ParseConfigChangeEvent(List<string> strings)
         {
             return new ConfigChangeArgs
             {
-                Type = ParseConfigChangeType(strings[0]),
-                Id = strings[1],
-                DeviceReferenceNumber = int.Parse(strings[2]),
-                Dac = ParseDac(strings[3]),
-                WhatChanged = strings[4]
+                Type = ParseConfigChangeType(strings[1]),
+                Id = strings[2],
+                DeviceReferenceNumber = int.Parse(strings[3]),
+                Dac = ParseDac(strings[4]),
+                WhatChanged = strings[5]
             };
         }
 
@@ -146,14 +179,14 @@ namespace Hspi.HspiPlugin3.Events
         {
             return new LogEventArgs
             {
-                DateTime = DateTime.Parse(strings[0]),
-                MessageClass = strings[1],
-                Message = strings[2],
-                Color = strings[3],
-                Priority = strings[4],
-                From = strings[5],
-                ErrorCode = strings[6],
-                Date = DateTime.Parse(strings[7])
+                DateTime = DateTime.Parse(strings[1]),
+                MessageClass = strings[2],
+                Message = strings[3],
+                Color = strings[4],
+                Priority = strings[5],
+                From = strings[6],
+                ErrorCode = strings[7],
+                Date = DateTime.Parse(strings[8])
             };
         }
 
@@ -161,11 +194,11 @@ namespace Hspi.HspiPlugin3.Events
         {
             return new AudioEventArgs
             {
-                Started = ParseBoolOrIntAsBool(strings[0]),
-                Devices = ParseBoolOrIntAsInt(strings[0]),
-                AudioType = strings[1] == "0" ? AudioType.TTS : AudioType.WAV,
-                Host = strings[2],
-                Instance = strings[3]
+                Started = ParseBoolOrIntAsBool(strings[1]),
+                Devices = ParseBoolOrIntAsInt(strings[1]),
+                AudioType = strings[2] == "0" ? AudioType.TTS : AudioType.WAV,
+                Host = strings[3],
+                Instance = strings[4]
             };
         }
 
@@ -240,18 +273,5 @@ namespace Hspi.HspiPlugin3.Events
                 _callback.RegisterEventCB(Enums.HSEvent.VOICE_REC, _name, "");
             }
         }
-    }
-
-    public enum Dac
-    {
-        Changed,
-
-        Deleted,
-
-        Added,
-
-        NotKnown,
-
-        None
     }
 }

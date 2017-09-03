@@ -2,7 +2,7 @@ using Hspi;
 
 //TODO: namespace $safeprojectname$
 
-namespace HSPIPluginB.Dev
+namespace HSPIPluginC.Dev
 {
     internal class Program
     {

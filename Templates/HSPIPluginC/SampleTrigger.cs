@@ -2,7 +2,7 @@ using System;
 using HomeSeerAPI;
 using Hspi.HspiPlugin3;
 
-namespace HSPIPluginB.Dev
+namespace HSPIPluginC.Dev
 {
     public class SampleTrigger : Trigger
     {
@@ -21,7 +21,7 @@ namespace HSPIPluginB.Dev
             throw new NotImplementedException();
         }
 
-        /// <inheritdoc />
+        
         public override bool Test(IPlugInAPI.strTrigActInfo actionInfo, TreeNodeCollection<Trigger> trigger)
         {
             throw new NotImplementedException();

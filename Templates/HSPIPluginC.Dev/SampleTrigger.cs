@@ -21,7 +21,7 @@ namespace HSPIPluginC.Dev
             throw new NotImplementedException();
         }
 
-        /// <inheritdoc />
+        
         public override bool Test(IPlugInAPI.strTrigActInfo actionInfo, TreeNodeCollection<Trigger> trigger)
         {
             throw new NotImplementedException();

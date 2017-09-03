@@ -18,7 +18,7 @@ namespace Hspi
 
         protected IScsServiceClient<IAppCallbackAPI> CallbackClient { get; set; }
 
-        protected IHSApplication HS { get; set; }
+        public IHSApplication HS { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "Hs",
             Justification = "R# doesn't like MS's standard.")]
@@ -39,7 +39,7 @@ namespace Hspi
             get
             {
                 var name = GetName();
-                if (Regex.IsMatch(name, "[^a-zA-Z0-9\\-\\. ]"))
+                if (Regex.IsMatch(name, "[^a-zA-Z0-9 \\-]"))
                 {
                     throw new HspiException("Name cannot include special characters");
                 }

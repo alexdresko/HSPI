@@ -1,7 +1,7 @@
 using HomeSeerAPI;
 using Hspi.HspiPlugin3;
 
-namespace HSPIPluginB.Dev
+namespace HSPIPluginC.Dev
 {
     public class SampleDevice : Device
     {
@@ -15,12 +15,8 @@ namespace HSPIPluginB.Dev
             throw new System.NotImplementedException();
         }
 
-        public override string Init()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void Shutdown()
+        
+        public override IPlugInAPI.PollResultInfo Poll()
         {
             throw new System.NotImplementedException();
         }
