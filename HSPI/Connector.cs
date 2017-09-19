@@ -64,6 +64,8 @@ namespace Hspi
                     Console.WriteLine($"Unhandled exception from Plugin: {ex.Message}");
                 }
             }
+
+            Environment.Exit(0);
         }
     }
 }
