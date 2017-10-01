@@ -34,6 +34,7 @@ rst_epilog = """
 .. _milestone: https://github.com/alexdresko/HSPI/milestones
 .. _helpwanted: https://github.com/alexdresko/HSPI/labels/help%20wanted
 .. |helpwanted| replace:: Help Wanted
+.. _issues: https://github.com/alexdresko/HSPI/issues
 """
 
 # -- General configuration ------------------------------------------------

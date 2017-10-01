@@ -6,4 +6,5 @@ Using HSPI
     :caption: Contents:
 
     getting-started
+    adding-an-action
     using-faq
