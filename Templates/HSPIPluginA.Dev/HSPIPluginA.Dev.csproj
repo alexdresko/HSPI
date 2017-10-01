@@ -85,6 +85,6 @@
   </Target>
   -->
   <Target Name="AfterBuild">
-    <Exec Command="powershell -file &quot;$(ProjectDir)fix-output.ps1&quot; -configuration $(ConfigurationName) -executionpolicy Unrestricted -NonInteractive" />
+    <Exec Command="&quot;%WINDIR%\SysNative\WindowsPowerShell\v1.0\powershell.exe&quot; -file &quot;$(ProjectDir)fix-output.ps1&quot; -configuration $(ConfigurationName) -executionpolicy Unrestricted -NonInteractive" />
   </Target>
 </Project>
