@@ -15,14 +15,16 @@ If you're starting with a completely new development environment, here are the s
 Installing the software
 -----------------------
 
+(On some installations of Windows, you may need to replace ``pip`` with ``py -m pip`` in the instructions below)
+
 #. Install Chocolatey_.  At any point in the following steps, you may need to restart your console for the newly installed tool to become available in your console session. 
 #. Install git via ``choco install git -y``
 #. Install python via ``choco install python -y``
 #. Install VS Code via ``choco install visualstudiocode -y``. I prefer to write the documentation in VS Code simply because I like VS Code. 
 #. Install Nodejs via ``choco install nodejs -y``
 #. Install Sphinx via ``pip install sphinx``
-#. Install Sphinx autobuild via ``pip install sphinx sphinx-autobuild``
-#. Install gulp via ``npm install -g gulp``
+#. Install Sphinx autobuild via ``pip install sphinx-autobuild``
+#. Install gulp via ``npm install -g gulp-cli``
 #. ``cd`` to the directory where you cloned HSPI from git
 #. Install the npm dependencies via ``npm install``
 #. Install the RTD Sphinx template via ``pip install sphinx_rtd_theme``

@@ -1,9 +1,8 @@
 ﻿using System.Collections.Specialized;
 using System.Text;
+using GutenTag.Hspi;
 using Hspi.HspiPlugin3;
-using Hspi.HspiPlugin3.GutenTag.Hspi;
 using Scheduler;
-using Hspi.HspiPlugin3.GutenTag.Hspi;
 
 namespace HSPIPluginC.Dev
 {

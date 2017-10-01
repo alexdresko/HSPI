@@ -68,6 +68,10 @@ Otherwise, here are the basic steps:
 
 Note that it's entirely possible to perform all of the above steps without ever leaving Github, though we recommend only doing that for simple changes to HSPI. 
 
+Prerequisites
+-------------
+
+You will need to `install the Visual Studio SDK <https://docs.microsoft.com/en-us/visualstudio/extensibility/installing-the-visual-studio-sdk>`_ in order to compile the HSPI.sln. Otherwise, the template project won't load. 
 
 
 Git branching strategy
