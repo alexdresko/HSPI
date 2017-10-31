@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C3AF5F1F-6760-4728-B04D-753404501E48}"
 	ProjectSection(SolutionItems) = preProject
@@ -55,6 +55,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSPIPluginC", "Templates\HSPIPluginC\HSPIPluginC.csproj", "{118A05DF-40D0-4A24-9881-7036A98EF6F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSPIPluginC.Dev", "Templates\HSPIPluginC.Dev\HSPIPluginC.Dev.csproj", "{FA50566B-5D1D-41A1-B23C-C8DF6C311342}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSPIPluginC.Sample", "Templates\HSPIPluginC.Sample\HSPIPluginC.Sample.csproj", "{778BD901-52E8-4137-A05A-9D03102F33AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -852,6 +854,54 @@ Global
 		{FA50566B-5D1D-41A1-B23C-C8DF6C311342}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA50566B-5D1D-41A1-B23C-C8DF6C311342}.Release|x86.ActiveCfg = Release|Any CPU
 		{FA50566B-5D1D-41A1-B23C-C8DF6C311342}.Release|x86.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Debug|x86.Build.0 = Debug|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.HTZEES2|Any CPU.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.HTZEES2|Any CPU.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.HTZEES2|x86.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.HTZEES2|x86.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.HTZEES2ASCII|Any CPU.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.HTZEES2ASCII|Any CPU.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.HTZEES2ASCII|x86.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.HTZEES2ASCII|x86.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Debug|Any CPU.Build.0 = Debug|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Debug|x86.ActiveCfg = Debug|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Debug|x86.Build.0 = Debug|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Release SEL|Any CPU.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Release SEL|Any CPU.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Release SEL|x86.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Release SEL|x86.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Release|Any CPU.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Release|Any CPU.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Release|x86.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Release|x86.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Debug|Any CPU.Build.0 = Debug|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Debug|x86.ActiveCfg = Debug|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Debug|x86.Build.0 = Debug|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Plus Release|Any CPU.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Plus Release|Any CPU.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Plus Release|x86.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Plus Release|x86.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Release ASCII|Any CPU.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Release ASCII|Any CPU.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Release ASCII|x86.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Release ASCII|x86.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Release|Any CPU.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Release|Any CPU.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Release|x86.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux Zee Release|x86.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux ZeePlus Release|Any CPU.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux ZeePlus Release|Any CPU.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux ZeePlus Release|x86.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Linux ZeePlus Release|x86.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Release|x86.ActiveCfg = Release|Any CPU
+		{778BD901-52E8-4137-A05A-9D03102F33AB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -875,5 +925,9 @@ Global
 		{6B15AEE6-B03B-4851-883F-5E2BCD1CB4EE} = {85A80E33-7B0C-4913-A709-F98A7F32829A}
 		{118A05DF-40D0-4A24-9881-7036A98EF6F7} = {91502416-B0AF-45EA-80A5-A35F0A497096}
 		{FA50566B-5D1D-41A1-B23C-C8DF6C311342} = {91502416-B0AF-45EA-80A5-A35F0A497096}
+		{778BD901-52E8-4137-A05A-9D03102F33AB} = {91502416-B0AF-45EA-80A5-A35F0A497096}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEF9C88D-7893-4093-91C0-68680A1C297E}
 	EndGlobalSection
 EndGlobal

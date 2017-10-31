@@ -2,7 +2,7 @@
 using HomeSeerAPI;
 using Hspi.HspiPlugin3;
 
-namespace HSPIPluginC.Dev
+namespace HSPIPluginC.Sample
 {
     public class SampleTrigger : Trigger
     {

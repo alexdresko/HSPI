@@ -4,7 +4,7 @@ using GutenTag.Hspi;
 using Hspi.HspiPlugin3;
 using Scheduler;
 
-namespace HSPIPluginC.Dev
+namespace HSPIPluginC.Sample
 {
     public class SamplePage : Page
     {
@@ -71,15 +71,6 @@ namespace HSPIPluginC.Dev
             };
 
             s.Append(form);
-
-            s.Append(FormStart(PageName, PageName, "post"));
-            var jqTextBox =
-                new clsJQuery.jqTextBox(GetPageTitle(), "text", GetPageTitle(), GetPageTitle(), 23, false)
-                ;
-            s.Append(jqTextBox.Build());
-            s.Append(new clsJQuery.jqCheckBox("a", "b", GetPageTitle(), true, false).Build());
-            s.Append(new clsJQuery.jqButton("b1", "Button", GetPageTitle(), true).Build());
-            s.Append(FormEnd());
             AddFooter(Root.HS.GetPageFooter());
             return s;
         }

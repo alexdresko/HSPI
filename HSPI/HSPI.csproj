@@ -84,10 +84,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnumEx.cs" />
     <Compile Include="Exceptions\HspiConnectionException.cs" />
     <Compile Include="Exceptions\HspiException.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="HspiPlugin3\Action.cs" />
+    <Compile Include="HspiPlugin3\DeviceConfigPage.cs" />
+    <Compile Include="HspiPlugin3\DeviceType.cs" />
     <Compile Include="HspiPlugin3\Events\AudioEventArgs.cs" />
     <Compile Include="HspiPlugin3\Events\AudioType.cs" />
     <Compile Include="HspiPlugin3\Events\CallerIdEventArgs.cs" />
@@ -106,6 +109,7 @@
     <Compile Include="HspiPlugin3\Events\SetupChangeEventArgs.cs" />
     <Compile Include="HspiPlugin3\Events\SpeakerConnectEventArgs.cs" />
     <Compile Include="HspiPlugin3\Events\StringChangeEventArgs.cs" />
+    <Compile Include="HspiPlugin3\ScriptDevice.cs" />
     <Compile Include="HspiPlugin3\TreeNode.cs" />
     <Compile Include="HspiPlugin3\Trigger.cs" />
     <Compile Include="HspiPlugin3\Events\ValueChangeEventArgs.cs" />
