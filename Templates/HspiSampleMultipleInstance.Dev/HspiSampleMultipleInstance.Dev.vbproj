@@ -403,14 +403,14 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HomeSeerAPI, Version=1.0.2.1, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\..\packages\Homeseer.1.0.0\lib\net45\HomeSeerAPI.dll</HintPath>
+    <Reference Include="HomeSeerAPI, Version=1.0.2.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\homeseer.1.1.0\lib\net45\HomeSeerAPI.dll</HintPath>
     </Reference>
     <Reference Include="HSCF, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Homeseer.1.0.0\lib\net45\HSCF.dll</HintPath>
+      <HintPath>..\..\packages\homeseer.1.1.0\lib\net45\HSCF.dll</HintPath>
     </Reference>
-    <Reference Include="Scheduler, Version=3.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\..\packages\Homeseer.1.0.0\lib\net45\Scheduler.dll</HintPath>
+    <Reference Include="Scheduler, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\homeseer.1.1.0\lib\net45\Scheduler.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
