@@ -3,4 +3,10 @@
     "files.exclude": {
         "**/obj": true
     },
+    "restructuredtext.confPath": "${workspaceRoot}/docs/source",
+    "restructuredtext.builtDocumentationPath": "${workspaceRoot}/docs/build/html",
+    "cSpell.words": [
+        "HSPI",
+        "repo"
+    ]
 }
