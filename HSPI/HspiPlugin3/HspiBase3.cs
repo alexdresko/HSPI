@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Web;
 using HomeSeerAPI;
 using Hspi.Exceptions;
@@ -225,7 +226,9 @@ namespace Hspi.HspiPlugin3
 
             ConfigureDevices();
 
-            ThreadPool.QueueUserWorkItem(InitIOWaitCallback);
+#pragma warning disable LindhartAnalyserMissingAwaitWarning // Possible missing await keyword
+            Task.Run(() => InitIO());
+#pragma warning restore LindhartAnalyserMissingAwaitWarning // Possible missing await keyword
 
             return string.Empty;
         }
@@ -781,11 +784,6 @@ namespace Hspi.HspiPlugin3
         }
 
         public List<Page> Pages { get; set; }
-
-        private void InitIOWaitCallback(object state)
-        {
-            InitIO();
-        }
 
         public override string InstanceFriendlyName()
         {
