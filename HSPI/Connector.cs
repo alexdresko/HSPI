@@ -13,58 +13,58 @@ namespace Hspi
             Justification = "I don't know what kinds of exceptions it _could_ throw.")]
         public static void Connect<TPlugin>(string[] args) where TPlugin : HspiBase, new()
         {
-            var options = new Options();
-            if (Parser.Default.ParseArguments(args, options))
-            {
-                Console.WriteLine("Test Plugin");
-
-                // create an instance of our plugin.
-                var myPlugin = new TPlugin();
-
-                // Get our plugin to connect to Homeseer
-                Console.WriteLine($"\nConnecting to Homeseer at {options.Server}:{options.Port} ...");
-                try
+            Parser.Default.ParseArguments<Options>(args)
+                .WithParsed(options =>
                 {
-                    myPlugin.Connect(options.Server, options.Port);
+                    Console.WriteLine("Test Plugin");
 
-                    // got this far then success
-                    Console.WriteLine("  connection to homeseer successful.\n");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"  connection to homeseer failed: {ex.Message}");
-                    return;
-                }
+                    // create an instance of our plugin.
+                    var myPlugin = new TPlugin();
 
-                // let the plugin do it's thing, wait until it shuts down or the connection to homeseer fails.
-                try
-                {
-                    while (true)
+                    // Get our plugin to connect to Homeseer
+                    Console.WriteLine($"\nConnecting to Homeseer at {options.Server}:{options.Port} ...");
+                    try
                     {
-                        // do nothing for a bit
-                        Thread.Sleep(200);
+                        myPlugin.Connect(options.Server, options.Port);
 
-                        // test the connection to homeseer
-                        if (!myPlugin.Connected)
-                        {
-                            Console.WriteLine("Connection to homeseer lost, exiting");
-                            break;
-                        }
+                        // got this far then success
+                        Console.WriteLine("  connection to homeseer successful.\n");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"  connection to homeseer failed: {ex.Message}");
+                        return;
+                    }
 
-                        // test for a shutdown signal
-                        if (myPlugin.Shutdown)
+                    // let the plugin do it's thing, wait until it shuts down or the connection to homeseer fails.
+                    try
+                    {
+                        while (true)
                         {
-                            Console.WriteLine("Plugin has been shut down, exiting");
-                            break;
+                            // do nothing for a bit
+                            Thread.Sleep(200);
+
+                            // test the connection to homeseer
+                            if (!myPlugin.Connected)
+                            {
+                                Console.WriteLine("Connection to homeseer lost, exiting");
+                                break;
+                            }
+
+                            // test for a shutdown signal
+                            if (myPlugin.Shutdown)
+                            {
+                                Console.WriteLine("Plugin has been shut down, exiting");
+                                break;
+                            }
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Unhandled exception from Plugin: {ex.Message}");
-                }
-            }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Unhandled exception from Plugin: {ex.Message}");
+                    }
 
+                });
             Environment.Exit(0);
         }
     }
