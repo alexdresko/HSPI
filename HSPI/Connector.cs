@@ -16,10 +16,14 @@ namespace Hspi
             Parser.Default.ParseArguments<Options>(args)
                 .WithParsed(options =>
                 {
-                    Console.WriteLine("Test Plugin");
-
                     // create an instance of our plugin.
                     var myPlugin = new TPlugin();
+                    Console.WriteLine(myPlugin.Name);
+
+                    if (Environment.UserInteractive)
+                    {
+                        Console.Title = myPlugin.Name;
+                    }
 
                     // Get our plugin to connect to Homeseer
                     Console.WriteLine($"\nConnecting to Homeseer at {options.Server}:{options.Port} ...");
