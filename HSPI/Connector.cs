@@ -11,20 +11,20 @@ namespace Hspi
             Justification = "The function wouldn't do anything without a plugin.")]
         [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes",
             Justification = "I don't know what kinds of exceptions it _could_ throw.")]
-        public static void Connect<TPlugin>(string[] args) where TPlugin : HspiBase, new()
+        public static TPlugin Connect<TPlugin>(string[] args, bool pollForShutdown = true) where TPlugin : HspiBase, new()
         {
+            // create an instance of our plugin.
+            var myPlugin = new TPlugin();
+            Console.WriteLine(myPlugin.Name);
+
+            if (Environment.UserInteractive)
+            {
+                Console.Title = myPlugin.Name;
+            }
+
             Parser.Default.ParseArguments<Options>(args)
                 .WithParsed(options =>
                 {
-                    // create an instance of our plugin.
-                    var myPlugin = new TPlugin();
-                    Console.WriteLine(myPlugin.Name);
-
-                    if (Environment.UserInteractive)
-                    {
-                        Console.Title = myPlugin.Name;
-                    }
-
                     // Get our plugin to connect to HomeSeer
                     Console.WriteLine($"\nConnecting to HomeSeer at {options.Server}:{options.Port} ...");
                     try
@@ -43,7 +43,7 @@ namespace Hspi
                     // let the plugin do it's thing, wait until it shuts down or the connection to HomeSeer fails.
                     try
                     {
-                        while (true)
+                        while (pollForShutdown)
                         {
                             // do nothing for a bit
                             Thread.Sleep(200);
@@ -68,8 +68,13 @@ namespace Hspi
                         Console.WriteLine($"Unhandled exception from Plugin: {ex.Message}");
                     }
 
+                    if (pollForShutdown)
+                    {
+                        Environment.Exit(0);
+                    }
                 });
-            Environment.Exit(0);
+
+            return myPlugin;
         }
     }
 }

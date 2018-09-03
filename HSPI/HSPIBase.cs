@@ -13,15 +13,19 @@ namespace Hspi
     // ReSharper disable once InconsistentNaming
     public abstract class HspiBase : IPlugInAPI
     {
-        protected IAppCallbackAPI Callback { get; set; }
+        // ReSharper disable once MemberCanBePrivate.Global
+        public IAppCallbackAPI Callback { get; set; }
 
-        protected IScsServiceClient<IAppCallbackAPI> CallbackClient { get; set; }
+        // ReSharper disable once MemberCanBePrivate.Global
+        public IScsServiceClient<IAppCallbackAPI> CallbackClient { get; set; }
 
-        protected IHSApplication HS { get; set; }
+        // ReSharper disable once MemberCanBeProtected.Global
+        public IHSApplication HS { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "Hs",
             Justification = "R# doesn't like MS's standard.")]
-        protected IScsServiceClient<IHSApplication> HsClient { get; set; }
+        // ReSharper disable once MemberCanBePrivate.Global
+        public IScsServiceClient<IHSApplication> HsClient { get; set; }
 
         public bool Shutdown { get; set; }
 
