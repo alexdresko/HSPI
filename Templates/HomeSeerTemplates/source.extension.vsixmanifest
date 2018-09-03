@@ -10,7 +10,7 @@
         <MoreInfo>https://github.com/alexdresko/HSPI</MoreInfo>
         <Icon>HS-Button_400x400.png</Icon>
         <PreviewImage>HS-Button_400x400.png</PreviewImage>
-        <Tags>homeseer home automation hspi</Tags>
+        <Tags>HomeSeer home automation HSPI</Tags>
         <GalleryFlags>Public</GalleryFlags>
     </Metadata>
     <Installation>
@@ -33,7 +33,7 @@
         <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="HSPIPluginA"
                d:TargetPath="|HSPIPluginA;TemplateProjectOutputGroup|" Path="ProjectTemplates"
                d:VsixSubPath="ProjectTemplates" />
-        <Asset Type="Homeseer.1.0.0.nupkg" d:Source="File" Path="Packages\Homeseer.1.0.0.nupkg" d:VsixSubPath="Packages" />
+        <Asset Type="HomeSeer.1.0.0.nupkg" d:Source="File" Path="Packages\HomeSeer.1.0.0.nupkg" d:VsixSubPath="Packages" />
         <Asset Type="HSPI.1.0.0.nupkg" d:Source="File" Path="Packages\HSPI.1.0.0.nupkg" d:VsixSubPath="Packages" />
         <Asset Type="CommandLineParser.2.3.0.nupkg" d:Source="File" Path="Packages\CommandLineParser.2.3.0.nupkg" d:VsixSubPath="Packages" />
         <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="HSPIPluginB"

@@ -71,9 +71,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="stylesheet.css" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\HSPIPluginA\HSPIPluginA.csproj">
       <Project>{56725C85-3A26-4FA9-9CE4-CACDDEFF9603}</Project>
       <Name>HSPIPluginA</Name>

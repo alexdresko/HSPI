@@ -90,7 +90,7 @@ namespace HSPIPluginA.Dev
 
         public override void SetIOMulti(List<CAPI.CAPIControl> colSend)
         {
-            // homeseer will inform us when the one of our devices has changed.  Push that change through to the field.
+            // HomeSeer will inform us when the one of our devices has changed.  Push that change through to the field.
         }
 
         public override void ShutdownIO()

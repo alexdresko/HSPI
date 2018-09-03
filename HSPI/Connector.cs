@@ -25,22 +25,22 @@ namespace Hspi
                         Console.Title = myPlugin.Name;
                     }
 
-                    // Get our plugin to connect to Homeseer
-                    Console.WriteLine($"\nConnecting to Homeseer at {options.Server}:{options.Port} ...");
+                    // Get our plugin to connect to HomeSeer
+                    Console.WriteLine($"\nConnecting to HomeSeer at {options.Server}:{options.Port} ...");
                     try
                     {
                         myPlugin.Connect(options.Server, options.Port);
 
                         // got this far then success
-                        Console.WriteLine("  connection to homeseer successful.\n");
+                        Console.WriteLine("  connection to HomeSeer successful.\n");
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine($"  connection to homeseer failed: {ex.Message}");
+                        Console.WriteLine($"  connection to HomeSeer failed: {ex.Message}");
                         return;
                     }
 
-                    // let the plugin do it's thing, wait until it shuts down or the connection to homeseer fails.
+                    // let the plugin do it's thing, wait until it shuts down or the connection to HomeSeer fails.
                     try
                     {
                         while (true)
@@ -48,10 +48,10 @@ namespace Hspi
                             // do nothing for a bit
                             Thread.Sleep(200);
 
-                            // test the connection to homeseer
+                            // test the connection to HomeSeer
                             if (!myPlugin.Connected)
                             {
-                                Console.WriteLine("Connection to homeseer lost, exiting");
+                                Console.WriteLine("Connection to HomeSeer lost, exiting");
                                 break;
                             }
 
