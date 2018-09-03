@@ -12,7 +12,7 @@
 //
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
 // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
@@ -44,8 +44,8 @@ namespace Hspi
     {
         /// <summary>
         /// </summary>
-        /// <param name="pagename">The name used by HomeSeer when referencing this particular page.</param>
-        public PageBuilder(string pagename) : base(pagename)
+        /// <param name="pageName">The name used by HomeSeer when referencing this particular page.</param>
+        public PageBuilder(string pageName) : base(pageName)
         {
         }
 
@@ -126,6 +126,7 @@ namespace Hspi
         protected static string FormLabel(string name, string message = "", bool visible = true)
         {
             string content;
+            // ReSharper disable once ConvertIfStatementToConditionalTernaryExpression
             if (visible)
             {
                 content = $"{message}<input id=\'{name}\' Name=\'{name}\' Type=\'hidden\'>";
