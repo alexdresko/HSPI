@@ -9,7 +9,7 @@
     <ProjectGuid>{CAA3F9D3-4647-48DE-8BA7-32AC317B046D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PluginA.Dev</RootNamespace>
+    <RootNamespace>HSPIPluginA.Dev</RootNamespace>
     <AssemblyName>HSPI_PluginA.Dev</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

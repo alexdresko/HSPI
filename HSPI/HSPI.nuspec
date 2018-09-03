@@ -11,9 +11,9 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>HomeSeer plugin helper framework</description>
         <releaseNotes>Initial release</releaseNotes>
-        <tags>homeseer home automation</tags>
+        <tags>HomeSeer home automation</tags>
         <dependencies>
-            <dependency id="homeseer" version="1.0" />
+            <dependency id="HomeSeer" version="1.0" />
         </dependencies>
     </metadata>
     <files>

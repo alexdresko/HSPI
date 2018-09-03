@@ -1,8 +1,8 @@
 using CommandLine;
-using CommandLine.Text;
 
 namespace Hspi
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     public class Options
     {
         [Option('p', "port", HelpText = "HomeSeer admin port", Default = 10400)]
