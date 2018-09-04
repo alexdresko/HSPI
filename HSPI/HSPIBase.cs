@@ -55,7 +55,7 @@ namespace Hspi
         public abstract string InstanceFriendlyName();
 
         /// <summary>
-        ///     API's that this plugin supports.
+        ///     APIs that this plugin supports.
         ///     This is a bit field.
         ///     All plugins must set CA_IO for I/O support.
         ///     Other values: CA_Security, CA_Thermostat, CA_Music, CA_SourceSwitch.
@@ -350,7 +350,7 @@ namespace Hspi
 
         /// <summary>
         ///     Process a post from the events web page when a user modifies any of the controls related to a plugin trigger.
-        ///     After processing the user selctions, create and return a strMultiReturn object.
+        ///     After processing the user selections, create and return a strMultiReturn object.
         /// </summary>
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "1#")]
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration", MessageId = "0#")]
@@ -415,7 +415,7 @@ namespace Hspi
         /// <returns>Name of the action.</returns>
         public abstract string get_ActionName(int actionNumber);
 
-        /// <summary> Indicate if the given trigger can also be used as a condition for the given grigger number. </summary>
+        /// <summary> Indicate if the given trigger can also be used as a condition for the given trigger number. </summary>
         public abstract bool get_HasConditions(int triggerNumber);
 
         public bool HasTriggers => GetHasTriggers();
@@ -436,7 +436,7 @@ namespace Hspi
         /// <summary> Return the number of sub triggers your plugin supports. </summary>
         public abstract int get_SubTriggerCount(int triggerNumber);
 
-        /// <summary> Return the text name of the sub trigger given its trugger number and sub trigger number. </summary>
+        /// <summary> Return the text name of the sub trigger given its trigger number and sub trigger number. </summary>
         public abstract string get_SubTriggerName(int triggerNumber, int subTriggerNumber);
 
         /// <summary> Indicate if the given trigger is configured properly. </summary>
@@ -464,7 +464,7 @@ namespace Hspi
         {
             // This method is called by our console wrapper at launch time
 
-            // Create our main connection to the homeseer TCP communication framework
+            // Create our main connection to the HomeSeer TCP communication framework
             // part 1 - hs object Proxy
             try
             {
@@ -479,7 +479,7 @@ namespace Hspi
             }
             catch (Exception ex)
             {
-                throw new HspiConnectionException($"Error connecting homeseer SCS client: {ex.Message}", ex);
+                throw new HspiConnectionException($"Error connecting HomeSeer SCS client: {ex.Message}", ex);
             }
 
             // part 2 - callback object Proxy
@@ -499,18 +499,18 @@ namespace Hspi
                 throw new HspiConnectionException($"Error connecting callback SCS client: {ex.Message}", ex);
             }
 
-            // Establish the reverse connection from homeseer back to our plugin
+            // Establish the reverse connection from HomeSeer back to our plugin
             try
             {
                 HS.Connect(Name, InstanceFriendlyName());
             }
             catch (Exception ex)
             {
-                throw new HspiConnectionException($"Error connecting homeseer to our plugin: {ex.Message}", ex);
+                throw new HspiConnectionException($"Error connecting HomeSeer to our plugin: {ex.Message}", ex);
             }
         }
 
-        /// <summary> Indicate if Homeseer should manage a COM port for the plugin. </summary>
+        /// <summary> Indicate if HomeSeer should manage a COM port for the plugin. </summary>
         /// <value><c>true</c> if COM port required; otherwise, <c>false</c>.</value>
         protected abstract bool GetHscomPort();
     }

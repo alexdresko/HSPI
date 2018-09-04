@@ -19,8 +19,8 @@
     <TemplateContent>
         <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
             <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
-            <ProjectItem ReplaceParameters="true" OpenInEditor="true">HSPI.cs</ProjectItem>
-            <ProjectItem ReplaceParameters="true" OpenInEditor="true">Program.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" OpenInEditor="false">HSPI.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" OpenInEditor="false">Program.cs</ProjectItem>
             <ProjectItem ReplaceParameters="true" OpenInEditor="false">App.config</ProjectItem>
             <ProjectItem ReplaceParameters="false" OpenInEditor="false">fix-output.ps1</ProjectItem>
         </Project>
@@ -32,9 +32,9 @@
     <WizardData>
         <packages repository="extension"
                   repositoryId="HomeSeerTemplates.Alex Dresko.82028f47-9623-4359-a6bf-244390c19608">
-            <package id="Homeseer" version="1.0.0" />
+            <package id="HomeSeer" version="1.0.0" />
             <package id="HSPI" version="1.0.0" />
-            <package id="CommandLineParser" version="1.9.71" />
+            <package id="CommandLineParser" version="2.3.0" />
         </packages>
     </WizardData>
 </VSTemplate>

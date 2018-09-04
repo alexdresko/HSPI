@@ -7,9 +7,9 @@
     <ProjectGuid>{8F609EDB-0CFF-4B67-A7ED-265331C90F91}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PluginB.Dev</RootNamespace>
+    <RootNamespace>HSPIPluginB.Dev</RootNamespace>
     <AssemblyName>HSPI_PluginB.Dev</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -67,6 +67,6 @@
   </Target>
   -->
   <Target Name="AfterBuild">
-    <Exec Command="powershell -file &quot;$(ProjectDir)fix-output.ps1&quot; -configuration $(ConfigurationName) -executionpolicy Unrestricted -NonInteractive" />
+    <Exec Command="&quot;%WINDIR%\SysNative\WindowsPowerShell\v1.0\powershell.exe&quot; -file &quot;$(ProjectDir)fix-output.ps1&quot; -configuration $(ConfigurationName) -executionpolicy Unrestricted -NonInteractive" />
   </Target>
 </Project>
