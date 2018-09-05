@@ -59,7 +59,7 @@ namespace Hspi.HspiPlugin3.Events
                 case Enums.HSEvent.GENERIC:
                     _eventContainerBase.HandleGenericEvent(ParseGenericEvent(strings));
                     break;
-                case Enums.HSEvent.Unused_4000:
+                case Enums.HSEvent.RUN_SCRIPT_SPECIAL:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(eventType), eventType, null);

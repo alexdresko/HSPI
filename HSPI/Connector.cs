@@ -56,7 +56,7 @@ namespace Hspi
                             }
 
                             // test for a shutdown signal
-                            if (myPlugin.Shutdown)
+                            if (myPlugin.IsShuttingDown)
                             {
                                 Console.WriteLine("Plugin has been shut down, exiting");
                                 break;

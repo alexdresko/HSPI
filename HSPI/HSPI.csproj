@@ -38,7 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
     <CodeAnalysisRuleSet>..\Default.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -58,12 +58,6 @@
     <Reference Include="CommandLine, Version=2.3.0.0, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
       <HintPath>..\packages\CommandLineParser.2.3.0\lib\net45\CommandLine.dll</HintPath>
     </Reference>
-    <Reference Include="GutenTag, Version=1.0.17.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GutenTag.1.0.17\lib\netstandard2.0\GutenTag.dll</HintPath>
-    </Reference>
-    <Reference Include="GutenTag.Hspi, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GutenTag.Hspi.1.0.8\lib\netstandard2.0\GutenTag.Hspi.dll</HintPath>
-    </Reference>
     <Reference Include="HomeSeerAPI, Version=1.0.2.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\homeseer.1.1.0\lib\net45\HomeSeerAPI.dll</HintPath>
     </Reference>
@@ -77,8 +71,6 @@
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Console, Version=4.0.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Console.4.3.1\lib\net46\System.Console.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
@@ -89,37 +81,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnumEx.cs" />
     <Compile Include="Exceptions\HspiConnectionException.cs" />
     <Compile Include="Exceptions\HspiException.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="HspiPlugin3\Action.cs" />
+    <Compile Include="HspiPlugin3\Device.cs" />
     <Compile Include="HspiPlugin3\DeviceConfigPage.cs" />
     <Compile Include="HspiPlugin3\DeviceType.cs" />
     <Compile Include="HspiPlugin3\Events\AudioEventArgs.cs" />
     <Compile Include="HspiPlugin3\Events\AudioType.cs" />
     <Compile Include="HspiPlugin3\Events\CallerIdEventArgs.cs" />
     <Compile Include="HspiPlugin3\Events\ConfigChangeArgs.cs" />
-    <Compile Include="HspiPlugin3\Device.cs" />
     <Compile Include="HspiPlugin3\Events\Dac.cs" />
     <Compile Include="HspiPlugin3\Events\EventContainer.cs" />
     <Compile Include="HspiPlugin3\Events\EventProcessor.cs" />
     <Compile Include="HspiPlugin3\Events\GenericEventArgs.cs" />
-    <Compile Include="HspiPlugin3\Events\SpeakerConnectionStatus.cs" />
-    <Compile Include="HspiPlugin3\HspiBase3.cs" />
-    <Compile Include="HspiPlugin3\LicenseLevel.cs" />
     <Compile Include="HspiPlugin3\Events\LogEventArgs.cs" />
     <Compile Include="HspiPlugin3\Events\MessageType.cs" />
-    <Compile Include="HspiPlugin3\Page.cs" />
     <Compile Include="HspiPlugin3\Events\SetupChangeEventArgs.cs" />
     <Compile Include="HspiPlugin3\Events\SpeakerConnectEventArgs.cs" />
+    <Compile Include="HspiPlugin3\Events\SpeakerConnectionStatus.cs" />
     <Compile Include="HspiPlugin3\Events\StringChangeEventArgs.cs" />
-    <Compile Include="HspiPlugin3\ScriptDevice.cs" />
-    <Compile Include="HspiPlugin3\TreeNode.cs" />
-    <Compile Include="HspiPlugin3\Trigger.cs" />
     <Compile Include="HspiPlugin3\Events\ValueChangeEventArgs.cs" />
     <Compile Include="HspiPlugin3\Events\ValueSetEventArgs.cs" />
     <Compile Include="HspiPlugin3\Events\VoiceRecordEventArgs.cs" />
+    <Compile Include="HspiPlugin3\HspiBase3.cs" />
+    <Compile Include="HspiPlugin3\LicenseLevel.cs" />
+    <Compile Include="HspiPlugin3\Page.cs" />
+    <Compile Include="HspiPlugin3\ScriptDevice.cs" />
+    <Compile Include="HspiPlugin3\TreeNode.cs" />
+    <Compile Include="HspiPlugin3\Trigger.cs" />
     <Compile Include="PageBuilder.cs" />
     <Compile Include="HSPIBase2.cs" />
     <Compile Include="HSPIBase.cs" />

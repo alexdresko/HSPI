@@ -16,7 +16,4 @@
             <dependency id="HomeSeer" version="1.0" />
         </dependencies>
     </metadata>
-    <files>
-        <file src="bin\$configuration$\$id$.dll" target="lib\net461\" />
-    </files>
 </package>
