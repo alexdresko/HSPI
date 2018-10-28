@@ -7,7 +7,7 @@ $vsixpublish = Get-ChildItem -File .\packages -recurse |
 
 $overview = (Get-Item .\Templates\HomeSeerTemplates\overview.md).FullName
 $manifest = (Get-Item .\Templates\HomeSeerTemplates\publish-manifest.json).FullName
-$vsix = (Get-Item .\Templates\HomeSeerTemplates\bin\Debug\HomeSeerTemplates.vsix).FullName
+$vsix = (Get-Item .\Templates\HomeSeerTemplates\bin\Release\HomeSeerTemplates.vsix).FullName
 Write-Host "vsix: $vsix"
 Write-Host "manifest: $manifest"
 Write-Host "overview: $overview"
