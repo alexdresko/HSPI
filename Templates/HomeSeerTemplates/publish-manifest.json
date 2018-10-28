@@ -1,0 +1,13 @@
+﻿{
+  "$schema": "http://json.schemastore.org/vsix-publish",
+  "categories": [ "Security", "Scaffolding", "Other" ],
+  "identity": {
+    "internalName": "HomeSeerTemplates2"
+  },
+  "overview": "overview.md",
+  "priceCategory": "free",
+  "publisher": "thealexdresko",
+  "private": false,
+  "qna": true,
+  "repo": "https://github.com/alexdresko/hspi"
+}

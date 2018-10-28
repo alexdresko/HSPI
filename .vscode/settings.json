@@ -7,6 +7,8 @@
     "restructuredtext.builtDocumentationPath": "${workspaceRoot}/docs/build/html",
     "cSpell.words": [
         "HSPI",
-        "repo"
+        "alexdresko",
+        "repo",
+        "thealexdresko"
     ]
 }
