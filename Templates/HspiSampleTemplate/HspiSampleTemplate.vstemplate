@@ -37,7 +37,7 @@
     </WizardExtension>
     <WizardData>
         <packages repository="extension"
-                  repositoryId="HomeSeerTemplates.Alex Dresko.82028f47-9623-4359-a6bf-244390c19608">
+                  repositoryId="HomeSeerTemplates2">
             <package id="Homeseer" version="1.0.0" />
             <package id="HSPI" version="1.0.0" />
             <package id="CommandLineParser" version="2.3.0" />
