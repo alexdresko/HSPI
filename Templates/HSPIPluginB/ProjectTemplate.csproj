@@ -9,7 +9,7 @@
 		<ProjectGuid>$guid1$</ProjectGuid>
 		<OutputType>Exe</OutputType>
 		<AppDesignerFolder>Properties</AppDesignerFolder>
-		<RootNamespace>$safeprojectname$</RootNamespace>
+		<RootNamespace>HSPI_$safeprojectname$</RootNamespace>
 		<AssemblyName>HSPI_$safeprojectname$</AssemblyName>
 		<TargetFrameworkVersion>v$targetframeworkversion$</TargetFrameworkVersion>
 		<FileAlignment>512</FileAlignment>

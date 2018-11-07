@@ -42,7 +42,7 @@
     <WizardData>
         <packages repository="extension"
                   repositoryId="HomeSeerTemplates2">
-            <package id="Homeseer" version="1.0.0" />
+            <package id="Homeseer" version="1.2.8" />
             <package id="HSPI" version="1.0.0" />
             <package id="CommandLineParser" version="2.3.0" />
         </packages>
