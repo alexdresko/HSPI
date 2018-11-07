@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using HomeSeerAPI;
 using Hspi;
 
-//TODO: namespace $safeprojectname$
+//TODO: namespace HSPI_$safeprojectname$
 
 namespace HSPIPluginA.Dev
 {

@@ -1,6 +1,6 @@
 ﻿using Hspi;
 
-//TODO: namespace $safeprojectname$
+//TODO: namespace HSPI_$safeprojectname$
 
 namespace HSPIPluginB.Dev
 {

@@ -14,7 +14,7 @@ gci templates\*.dev -Directory | foreach {
     gci "$destinationDirectory\*" -Include *.cs, *.vb, app.config | foreach {
         "Fixing $($_.FullName)"
         $content = [System.IO.File]::ReadAllText($_.FullName)
-        $content = [System.Text.RegularExpressions.Regex]::Replace($content, "(?<prefix>//|<!--)\s*TODO:\s*?(?<whatiwant>.*?)(?<ending>-->).*(?<newline>\n)(?<possibleblank>^\s*)(?<toreplace>.*)\n", "`$2", [System.Text.RegularExpressions.RegexOptions]::Multiline)
+        $content = [System.Text.RegularExpressions.Regex]::Replace($content, "(?<prefix>//|<!--)\s*TODO:\s*?(?<whatiwant>.*).*(?<ending>-->)?.*(?<newline>\n)(?<possibleblank>^\s*)(?<toreplace>.*)\n", "`$2", [System.Text.RegularExpressions.RegexOptions]::Multiline)
         [System.IO.File]::WriteAllText($_.FullName, $content)
     }
 }
