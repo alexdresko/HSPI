@@ -3,7 +3,7 @@ $vsixpublish = Get-ChildItem -File .\packages -recurse |
     Sort-Object -Descending -Property CreationTime | 
     Select-Object -First 1 -ExpandProperty FullName
 
-. $vsixpublish login -publisherName alexdresko -personalAccessToken $env:homeseertemplatespublish
+. $vsixpublish login -publisherName thealexdresko -personalAccessToken $env:homeseertemplatespublish
 
 $overview = (Get-Item .\Templates\HomeSeerTemplates\overview.md).FullName
 $manifest = (Get-Item .\Templates\HomeSeerTemplates\publish-manifest.json).FullName
