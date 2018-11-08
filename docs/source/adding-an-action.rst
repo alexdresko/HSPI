@@ -22,7 +22,7 @@ The following functions are used in creating an action:
     The name of your action for the actionnumber given. Homeseer will use 1 as the first action.
 
 * **public override bool HandleAction(IPlugInAPI.strTrigActInfo actionInfo)**
-    This it the function handling the action when it is triggered in Homeseer.
+    This is the function handling the action when it is triggered in Homeseer.
 
 General functions that you will use
 -----------------------------------
