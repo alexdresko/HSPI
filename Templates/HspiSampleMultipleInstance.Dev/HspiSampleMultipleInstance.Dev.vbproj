@@ -477,12 +477,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   -->
   <Target Name="AfterBuild">
-    <Exec Command="powershell -file &quot;$(ProjectDir)fix-output.ps1&quot; -configuration $(ConfigurationName) -executionpolicy Unrestricted -NonInteractive" />
+    <Exec Command="powershell -file &quot;$(ProjectDir)fix-output.ps1&quot; -configuration $(ConfigurationName) -executionpolicy Bypass  -NonInteractive" />
   </Target>
 </Project>
