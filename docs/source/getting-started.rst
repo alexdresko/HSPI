@@ -3,25 +3,25 @@ Getting Started
 
 If you are looking to contribute to the HSPI project, please see :doc:`how-to-contribute`
 
-These instructions assume you have a default HomeSeer installation on the same computer that you’ll be developing on. If that is not the case, you can still follow these instructions, and then refer to the remaining HSPI documentation to adapt the project for your environment. 
+These instructions assume you have a default HomeSeer installation on the same computer that you’ll be developing on. If that is not the case, you can still follow these instructions, and then refer to the remaining HSPI documentation to adapt the project for your environment.
 
 1. In Visual Studio, open “Tools > Extensions and Updates”
 
     .. figure:: _static/tools-extensions-and-updates.png
 
-#. Click the “Online” tab, search for “HomeSeer”, and click “Download”. 
+#. Click the “Online” tab, search for “HomeSeer”, and click “Download”.
 
     .. figure:: _static/extensions-and-updates-search.png
 
-    Alternatively, download it from https://marketplace.visualstudio.com/items?itemName=thealexdresko.HomeSeerTemplates-18379
+    Alternatively, download it from https://marketplace.visualstudio.com/items?itemName=thealexdresko.HomeSeerTemplates2
 
-#. Once installed, you can “File > New Project” to create a HomeSeer plugin. The templates can be found under “Templates > Visual C# > HomeSeer”. 
- 
+#. Once installed, you can “File > New Project” to create a HomeSeer plugin. The templates can be found under “Templates > Visual C# > HomeSeer”.
+
     .. figure:: _static/file-new-project.png
 
-    Refer to the :ref:`templates list <the-templates>` to determine which template is most appropriate.  
+    Refer to the :ref:`templates list <the-templates>` to determine which template is most appropriate.
 
-#. F5 to launch the project and verify connectivity to HomeSeer. 
+#. F5 to launch the project and verify connectivity to HomeSeer.
 
     If all goes well, you should see a success message in the console window:
 
